@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A0E22C381F0009BFC1A /* RubiViewController.swift */; };
+		0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D582A0F22C381F0009BFC1A /* RubiViewController.xib */; };
 		0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31422C3810300FD6CA9 /* AppDelegate.swift */; };
-		0D68C31722C3810300FD6CA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31622C3810300FD6CA9 /* ViewController.swift */; };
 		0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31822C3810300FD6CA9 /* Main.storyboard */; };
 		0D68C31C22C3810600FD6CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31B22C3810500FD6CA9 /* Assets.xcassets */; };
 		0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31D22C3810600FD6CA9 /* LaunchScreen.storyboard */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D582A0E22C381F0009BFC1A /* RubiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiViewController.swift; sourceTree = "<group>"; };
+		0D582A0F22C381F0009BFC1A /* RubiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RubiViewController.xib; sourceTree = "<group>"; };
 		0D68C31122C3810300FD6CA9 /* Rubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C31422C3810300FD6CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D68C31622C3810300FD6CA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D68C31922C3810300FD6CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D68C31B22C3810500FD6CA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D68C31E22C3810600FD6CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				0D68C31422C3810300FD6CA9 /* AppDelegate.swift */,
-				0D68C31622C3810300FD6CA9 /* ViewController.swift */,
+				0D582A0E22C381F0009BFC1A /* RubiViewController.swift */,
+				0D582A0F22C381F0009BFC1A /* RubiViewController.xib */,
 				0D68C31822C3810300FD6CA9 /* Main.storyboard */,
 				0D68C31B22C3810500FD6CA9 /* Assets.xcassets */,
 				0D68C31D22C3810600FD6CA9 /* LaunchScreen.storyboard */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */,
 				0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */,
 				0D68C31C22C3810600FD6CA9 /* Assets.xcassets in Resources */,
 				0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */,
@@ -256,8 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D68C31722C3810300FD6CA9 /* ViewController.swift in Sources */,
 				0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */,
+				0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
