@@ -77,5 +77,8 @@ extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
         cell.kanjiLabel.text = "伝説"
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
 }
 
