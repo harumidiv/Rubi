@@ -12,6 +12,7 @@
 		0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A1222C3833B009BFC1A /* RubiPresenter.swift */; };
 		0D582A1522C3836F009BFC1A /* RubiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A1422C3836F009BFC1A /* RubiModel.swift */; };
 		0D582A1722C4E2EC009BFC1A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A1622C4E2EC009BFC1A /* Constant.swift */; };
+		0D582A1922C4E5EE009BFC1A /* Rubi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A1822C4E5EE009BFC1A /* Rubi.swift */; };
 		0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31422C3810300FD6CA9 /* AppDelegate.swift */; };
 		0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31822C3810300FD6CA9 /* Main.storyboard */; };
 		0D68C31C22C3810600FD6CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31B22C3810500FD6CA9 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		0D582A1222C3833B009BFC1A /* RubiPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiPresenter.swift; sourceTree = "<group>"; };
 		0D582A1422C3836F009BFC1A /* RubiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiModel.swift; sourceTree = "<group>"; };
 		0D582A1622C4E2EC009BFC1A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0D582A1822C4E5EE009BFC1A /* Rubi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rubi.swift; sourceTree = "<group>"; };
 		0D68C31122C3810300FD6CA9 /* Rubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C31422C3810300FD6CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D68C31922C3810300FD6CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D582A1A22C4E611009BFC1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D582A0E22C381F0009BFC1A /* RubiViewController.swift */,
+				0D582A1222C3833B009BFC1A /* RubiPresenter.swift */,
+				0D582A1422C3836F009BFC1A /* RubiModel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0D68C30822C3810300FD6CA9 = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +119,8 @@
 			children = (
 				0D68C31422C3810300FD6CA9 /* AppDelegate.swift */,
 				0D582A1622C4E2EC009BFC1A /* Constant.swift */,
-				0D582A0E22C381F0009BFC1A /* RubiViewController.swift */,
-				0D582A1222C3833B009BFC1A /* RubiPresenter.swift */,
-				0D582A1422C3836F009BFC1A /* RubiModel.swift */,
+				0D582A1822C4E5EE009BFC1A /* Rubi.swift */,
+				0D582A1A22C4E611009BFC1A /* View */,
 				0D582A0F22C381F0009BFC1A /* RubiViewController.xib */,
 				0D68C31822C3810300FD6CA9 /* Main.storyboard */,
 				0D68C31B22C3810500FD6CA9 /* Assets.xcassets */,
@@ -270,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */,
+				0D582A1922C4E5EE009BFC1A /* Rubi.swift in Sources */,
 				0D582A1522C3836F009BFC1A /* RubiModel.swift in Sources */,
 				0D582A1722C4E2EC009BFC1A /* Constant.swift in Sources */,
 				0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */,

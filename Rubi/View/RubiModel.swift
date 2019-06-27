@@ -1,29 +1,29 @@
 //
-//  RubiViewController.swift
+//  RubiModel.swift
 //  Rubi
 //
 //  Created by 佐川晴海 on 2019/06/26.
 //  Copyright © 2019 佐川晴海. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class RubiViewController: UIViewController {
-    
-    lazy var presenter: RubiPresenter =  {
-        return RubiPresenterImpl(model: RubiModelImpl())
-    }()
+protocol RubiModel: class{
+    func requesetAPI(text: String, result:@escaping(String)->())
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
+
+class RubiModelImpl: RubiModel {
+    private lazy var request: URLRequest = {
         var request = URLRequest(url: Constant.apiURL )
         request.httpMethod = "POST"
         request.addValue(Constant.request.json, forHTTPHeaderField: Constant.request.type)
         request.addValue(Constant.request.urlencoded, forHTTPHeaderField: Constant.request.type)
-        
-        let postData = PostData(app_id: Constant.appID , sentence: "電光石火", output_type: Constant.convertType.hiragana)
-        
+        return request
+    }()
+    
+    func requesetAPI(text: String, result:@escaping(String)->()) {
+        let postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.hiragana)
         
         guard let uploadData = try? JSONEncoder().encode(postData) else {
             print("json生成に失敗しました")
@@ -47,19 +47,8 @@ class RubiViewController: UIViewController {
                 print("json変換に失敗しました")
                 return
             }
-            print(jsonData.converted)
+            result(jsonData.converted)
         }
         task.resume()
     }
-}
-struct Rubi:Codable {
-    var request_id: String
-    var output_type: String
-    var converted: String
-}
-
-struct PostData: Codable {
-    var app_id:String
-    var sentence: String
-    var output_type: String
 }
