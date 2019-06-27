@@ -14,6 +14,11 @@ class RubiViewController: UIViewController {
             rubiTextField.delegate = self
         }
     }
+    @IBOutlet weak var indicator: UIActivityIndicatorView! {
+        didSet {
+            indicator.isHidden = true
+        }
+    }
     
     @IBOutlet weak var rubiLabel: UILabel!
     lazy var presenter: RubiPresenter =  {
@@ -29,6 +34,9 @@ class RubiViewController: UIViewController {
 extension RubiViewController: RubiPresenterOutput {
     func convertText(hiragana: String) {
         DispatchQueue.main.async {
+            self.indicator.startAnimating()
+            self.indicator.isHidden = true
+            self.rubiLabel.isHidden = false
             self.rubiLabel.text = hiragana
         }
     }
@@ -42,7 +50,9 @@ extension RubiViewController: UITextFieldDelegate{
             rubiLabel.text = "文字を入力してください"
             return true
         }
-        
+        indicator.isHidden = false
+        indicator.startAnimating()
+        rubiLabel.isHidden = true
         presenter.requestAPI(text: text)
         textField.resignFirstResponder()
         return true

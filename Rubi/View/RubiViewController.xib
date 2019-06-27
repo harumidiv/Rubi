@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RubiViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="indicator" destination="T9J-aC-IeP" id="rle-Bf-Ry4"/>
                 <outlet property="rubiLabel" destination="jpL-99-H4Q" id="LaJ-1F-4uA"/>
                 <outlet property="rubiTextField" destination="C3e-bG-aCa" id="5Tc-2q-psF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,13 +42,13 @@
                     <rect key="frame" x="16" y="60" width="382" height="82"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="漢字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpF-ZD-GUD">
-                            <rect key="frame" x="48" y="26" width="51" height="30"/>
+                            <rect key="frame" x="56" y="26" width="51" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひがらな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgZ-DX-0J3">
-                            <rect key="frame" x="248.5" y="26" width="101.5" height="30"/>
+                            <rect key="frame" x="248" y="26" width="102" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -64,7 +65,7 @@
                         <constraint firstAttribute="trailing" secondItem="hgZ-DX-0J3" secondAttribute="trailing" constant="32" id="0YQ-Jg-rj6"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="top" secondItem="NH9-s2-ZbX" secondAttribute="top" constant="23" id="9Fc-ax-7IU"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="centerY" secondItem="NH9-s2-ZbX" secondAttribute="centerY" id="9gb-Gi-MrE"/>
-                        <constraint firstItem="GpF-ZD-GUD" firstAttribute="leading" secondItem="NH9-s2-ZbX" secondAttribute="leading" constant="48" id="Ebc-Va-bzv"/>
+                        <constraint firstItem="GpF-ZD-GUD" firstAttribute="leading" secondItem="NH9-s2-ZbX" secondAttribute="leading" constant="56" id="Ebc-Va-bzv"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="centerX" secondItem="NH9-s2-ZbX" secondAttribute="centerX" id="FN4-J5-qwy"/>
                         <constraint firstItem="hgZ-DX-0J3" firstAttribute="centerY" secondItem="NH9-s2-ZbX" secondAttribute="centerY" id="Oz1-Py-KMR"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GpF-ZD-GUD" secondAttribute="trailing" constant="16" id="T8n-pA-sqj"/>
@@ -72,6 +73,9 @@
                         <constraint firstItem="hgZ-DX-0J3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qtT-D4-Uzd" secondAttribute="trailing" constant="16" id="z6W-H8-FMl"/>
                     </constraints>
                 </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T9J-aC-IeP">
+                    <rect key="frame" x="197" y="331" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -79,11 +83,15 @@
                 <constraint firstItem="jpL-99-H4Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1Or-ab-Tr3"/>
                 <constraint firstItem="C3e-bG-aCa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="3CQ-DK-mDZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NH9-s2-ZbX" secondAttribute="trailing" constant="16" id="4Ey-Ir-ox4"/>
+                <constraint firstItem="T9J-aC-IeP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="5bY-7S-JZn"/>
                 <constraint firstItem="C3e-bG-aCa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="9Fb-au-pC0"/>
                 <constraint firstItem="C3e-bG-aCa" firstAttribute="top" secondItem="NH9-s2-ZbX" secondAttribute="bottom" constant="8" id="Ffd-ej-zDs"/>
+                <constraint firstItem="T9J-aC-IeP" firstAttribute="centerX" secondItem="jpL-99-H4Q" secondAttribute="centerX" id="Jcc-rZ-NFn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="T9J-aC-IeP" secondAttribute="trailing" constant="16" id="KdD-XY-erG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jpL-99-H4Q" secondAttribute="trailing" constant="16" id="P9u-FI-RBt"/>
                 <constraint firstItem="jpL-99-H4Q" firstAttribute="top" secondItem="C3e-bG-aCa" secondAttribute="bottom" constant="46" id="RaC-2N-l6y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C3e-bG-aCa" secondAttribute="trailing" constant="16" id="U89-gn-z6q"/>
+                <constraint firstItem="T9J-aC-IeP" firstAttribute="centerY" secondItem="jpL-99-H4Q" secondAttribute="centerY" id="lE5-2a-v3t"/>
                 <constraint firstItem="NH9-s2-ZbX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oWE-PB-dpp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
