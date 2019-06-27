@@ -9,7 +9,9 @@
 import UIKit
 
 class RubiTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var rubiLabel: UILabel!
+    @IBOutlet weak var kanjiLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -9,6 +9,13 @@
 import UIKit
 
 class RubiViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.register(cellType: RubiTableViewCell.self)
+        }
+    }
     @IBOutlet weak var rubiTextField: UITextField! {
         didSet {
             rubiTextField.delegate = self
@@ -58,3 +65,17 @@ extension RubiViewController: UITextFieldDelegate{
         return true
     }
 }
+
+extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(with: RubiTableViewCell.self, for: indexPath)
+        cell.rubiLabel.text = "でんせつ"
+        cell.kanjiLabel.text = "伝説"
+        return cell
+    }
+}
+

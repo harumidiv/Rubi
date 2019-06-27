@@ -15,6 +15,7 @@
                 <outlet property="indicator" destination="T9J-aC-IeP" id="rle-Bf-Ry4"/>
                 <outlet property="rubiLabel" destination="jpL-99-H4Q" id="LaJ-1F-4uA"/>
                 <outlet property="rubiTextField" destination="C3e-bG-aCa" id="5Tc-2q-psF"/>
+                <outlet property="tableView" destination="suM-cU-M5D" id="GhN-nv-1qu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -76,6 +77,10 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T9J-aC-IeP">
                     <rect key="frame" x="197" y="331" width="20" height="20"/>
                 </activityIndicatorView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="suM-cU-M5D">
+                    <rect key="frame" x="16" y="367.5" width="382" height="478.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -86,11 +91,15 @@
                 <constraint firstItem="T9J-aC-IeP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="5bY-7S-JZn"/>
                 <constraint firstItem="C3e-bG-aCa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="9Fb-au-pC0"/>
                 <constraint firstItem="C3e-bG-aCa" firstAttribute="top" secondItem="NH9-s2-ZbX" secondAttribute="bottom" constant="8" id="Ffd-ej-zDs"/>
+                <constraint firstItem="suM-cU-M5D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GNk-gl-N8z"/>
                 <constraint firstItem="T9J-aC-IeP" firstAttribute="centerX" secondItem="jpL-99-H4Q" secondAttribute="centerX" id="Jcc-rZ-NFn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="T9J-aC-IeP" secondAttribute="trailing" constant="16" id="KdD-XY-erG"/>
+                <constraint firstItem="suM-cU-M5D" firstAttribute="top" secondItem="jpL-99-H4Q" secondAttribute="bottom" constant="16" id="NK5-Gq-Une"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="suM-cU-M5D" secondAttribute="trailing" constant="16" id="OPM-ab-A6E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jpL-99-H4Q" secondAttribute="trailing" constant="16" id="P9u-FI-RBt"/>
                 <constraint firstItem="jpL-99-H4Q" firstAttribute="top" secondItem="C3e-bG-aCa" secondAttribute="bottom" constant="46" id="RaC-2N-l6y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C3e-bG-aCa" secondAttribute="trailing" constant="16" id="U89-gn-z6q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="suM-cU-M5D" secondAttribute="bottom" constant="16" id="f42-ji-Ff4"/>
                 <constraint firstItem="T9J-aC-IeP" firstAttribute="centerY" secondItem="jpL-99-H4Q" secondAttribute="centerY" id="lE5-2a-v3t"/>
                 <constraint firstItem="NH9-s2-ZbX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="oWE-PB-dpp"/>
             </constraints>
