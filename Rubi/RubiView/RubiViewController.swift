@@ -40,6 +40,10 @@ class RubiViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         title = "Rubi 翻訳"
     }
+    @objc func saveFavoriteItem(_ button: UIButton){
+        print(button.tag)
+    }
+    
 }
 
 extension RubiViewController: RubiPresenterOutput {
@@ -84,6 +88,8 @@ extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
         let item = reverseList[indexPath.row]
         cell.rubiLabel.text = item.convertTest
         cell.kanjiLabel.text = item.rootText
+        cell.favoriteButton.tag = indexPath.row
+        cell.favoriteButton.addTarget(self, action:  #selector(saveFavoriteItem), for: .touchUpInside)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

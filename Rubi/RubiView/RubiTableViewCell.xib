@@ -20,29 +20,40 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空前絶後" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIY-ms-wNa">
-                        <rect key="frame" x="16" y="33" width="142" height="42"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                        <rect key="frame" x="16" y="30.5" width="121.5" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="くうぜんぜつご" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgI-oT-kDH">
-                        <rect key="frame" x="20" y="8" width="122" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="20" y="12" width="86" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpu-JX-W4r">
+                        <rect key="frame" x="282" y="31.5" width="30" height="42"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        <state key="normal" title="☆">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WIY-ms-wNa" secondAttribute="trailing" constant="8" id="IRi-Wc-HFk"/>
+                    <constraint firstAttribute="trailing" secondItem="Cpu-JX-W4r" secondAttribute="trailing" constant="8" id="59O-fo-Q3D"/>
                     <constraint firstItem="WIY-ms-wNa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pxa-RE-UMu"/>
+                    <constraint firstItem="Cpu-JX-W4r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WIY-ms-wNa" secondAttribute="trailing" constant="8" id="VrI-WK-85x"/>
                     <constraint firstItem="CgI-oT-kDH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="by1-Vi-bmP"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WIY-ms-wNa" secondAttribute="bottom" constant="8" id="j1m-dJ-hfh"/>
-                    <constraint firstItem="CgI-oT-kDH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="nvx-KK-4PD"/>
+                    <constraint firstItem="CgI-oT-kDH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="nvx-KK-4PD"/>
+                    <constraint firstItem="Cpu-JX-W4r" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="4" id="ttj-Cu-42h"/>
                     <constraint firstItem="WIY-ms-wNa" firstAttribute="top" secondItem="CgI-oT-kDH" secondAttribute="bottom" constant="4" id="x7U-It-Z6h"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CgI-oT-kDH" secondAttribute="trailing" constant="50" id="xMg-4E-jS1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="favoriteButton" destination="Cpu-JX-W4r" id="14N-8n-vhv"/>
                 <outlet property="kanjiLabel" destination="WIY-ms-wNa" id="Zk5-8t-aLD"/>
                 <outlet property="rubiLabel" destination="CgI-oT-kDH" id="xi1-D4-wKB"/>
             </connections>
