@@ -31,6 +31,9 @@ class RubiViewController: UIViewController {
     lazy var presenter: RubiPresenter =  {
         return RubiPresenterImpl(model: RubiModelImpl(), output: self)
     }()
+    
+    var rubiList:[RubiEntity] = []
+    var rootText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,8 @@ extension RubiViewController: RubiPresenterOutput {
             self.indicator.isHidden = true
             self.rubiLabel.isHidden = false
             self.rubiLabel.text = hiragana
+            self.rubiList.append(RubiEntity(rootText: self.rootText!, convertTest: hiragana))
+            self.tableView.reloadData()
         }
     }
 }
@@ -58,6 +63,7 @@ extension RubiViewController: UITextFieldDelegate{
             rubiLabel.text = "文字を入力してください"
             return true
         }
+        rootText = text
         indicator.isHidden = false
         indicator.startAnimating()
         rubiLabel.isHidden = true
@@ -69,13 +75,15 @@ extension RubiViewController: UITextFieldDelegate{
 
 extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return rubiList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(with: RubiTableViewCell.self, for: indexPath)
-        cell.rubiLabel.text = "でんせつ"
-        cell.kanjiLabel.text = "伝説"
+        let reverseList:[RubiEntity] = rubiList.reversed()
+        let item = reverseList[indexPath.row]
+        cell.rubiLabel.text = item.convertTest
+        cell.kanjiLabel.text = item.rootText
         return cell
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
