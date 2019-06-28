@@ -21,7 +21,7 @@ class TabController: UITabBarController {
         
         var viewControllers: [UIViewController] = []
         
-        let firstViewController = RubiViewController()
+        let firstViewController = UINavigationController(rootViewController:RubiViewController())
         firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.mostRecent, tag: 1)
         viewControllers.append(firstViewController)
         
@@ -31,7 +31,7 @@ class TabController: UITabBarController {
         
         self.setViewControllers(viewControllers, animated: false)
         
-        // なぜか0だけだと選択されないので1にしてから0に
+        // 0だけだと選択されないので1にしてから0に
         self.selectedIndex = 1
         self.selectedIndex = 0
     }
