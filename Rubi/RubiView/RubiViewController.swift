@@ -16,9 +16,9 @@ class RubiViewController: UIViewController {
             tableView.register(cellType: RubiTableViewCell.self)
         }
     }
-    @IBOutlet weak var rubiTextField: UITextField! {
+    @IBOutlet weak var rubiTextView: UITextView! {
         didSet {
-            rubiTextField.delegate = self
+            rubiTextView.delegate = self
         }
     }
     @IBOutlet weak var indicator: UIActivityIndicatorView! {
@@ -27,7 +27,12 @@ class RubiViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var rubiLabel: UILabel!
+    @IBOutlet weak var rubiLabel: UILabel! {
+        didSet {
+            rubiLabel.text = ""
+        }
+    }
+    
     lazy var presenter: RubiPresenter =  {
         return RubiPresenterImpl(model: RubiModelImpl(), output: self)
     }()
@@ -77,20 +82,25 @@ extension RubiViewController: RubiPresenterOutput {
     }
 }
 
-extension RubiViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        guard let text = textField.text, text.count > 0 else {
-            rubiLabel.text = "⚠️文字を入力してください"
-            return true
+extension RubiViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            guard let text = rubiTextView.text, text.count > 0 else {
+                rubiLabel.text = "⚠️文字を入力してください"
+                return true
+            }
+            rootText = text
+            indicator.isHidden = false
+            indicator.startAnimating()
+            rubiLabel.isHidden = true
+            presenter.requestAPI(text: text)
+            rubiTextView.resignFirstResponder()
+            return false
         }
-        rootText = text
-        indicator.isHidden = false
-        indicator.startAnimating()
-        rubiLabel.isHidden = true
-        presenter.requestAPI(text: text)
-        textField.resignFirstResponder()
         return true
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
     }
 }
 
