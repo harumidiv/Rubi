@@ -22,13 +22,13 @@ class TabController: UITabBarController {
         var viewControllers: [UIViewController] = []
         
         let firstViewController = UINavigationController(rootViewController:RubiViewController())
-        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.mostRecent, tag: 1)
+        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.history, tag: 1)
         viewControllers.append(firstViewController)
         
-        let secondViewController = FavoriteViewController()
-        secondViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.mostViewed, tag: 2)
-        viewControllers.append(secondViewController)
         
+        let secondViewController = FavoriteViewController()
+        secondViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 2)
+        viewControllers.append(secondViewController)
         self.setViewControllers(viewControllers, animated: false)
         
         // 0だけだと選択されないので1にしてから0に

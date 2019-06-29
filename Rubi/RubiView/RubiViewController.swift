@@ -41,7 +41,22 @@ class RubiViewController: UIViewController {
         title = "Rubi 翻訳"
     }
     @objc func saveFavoriteItem(_ button: UIButton){
-        print(button.tag)
+        let item = rubiList[button.tag]
+        if button.titleLabel?.text == "☆" {
+            button.setTitleColor(.yellow, for: .normal)
+            button.setTitle("★", for: .normal)
+            saveItem(rootText: item.rootText, convertText: item.convertTest)
+        } else {
+            button.setTitleColor(.black, for: .normal)
+            button.setTitle("☆", for: .normal)
+            removeItem(rootText: item.rootText, conertText: item.convertTest)
+        }
+    }
+    private func saveItem(rootText: String, convertText: String){
+        print("userDefaultに保存しました")
+    }
+    private func removeItem(rootText: String, conertText: String) {
+        print("userDefaultから削除しました")
     }
     
 }
@@ -63,8 +78,7 @@ extension RubiViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         guard let text = textField.text, text.count > 0 else {
-            print("からです")
-            rubiLabel.text = "文字を入力してください"
+            rubiLabel.text = "⚠️文字を入力してください"
             return true
         }
         rootText = text
