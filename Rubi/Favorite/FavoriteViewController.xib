@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="6aE-i3-O2M" id="GGU-tZ-nsu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存済み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV0-Ee-iLj">
-                            <rect key="frame" x="16" y="68.5" width="93.5" height="27.5"/>
+                            <rect key="frame" x="16" y="68" width="94" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -36,12 +37,20 @@
                         <constraint firstItem="dV0-Ee-iLj" firstAttribute="leading" secondItem="AXG-B6-Mbo" secondAttribute="leading" constant="16" id="rfy-Rc-ujC"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6aE-i3-O2M">
+                    <rect key="frame" x="8" y="120" width="398" height="742"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I8M-hK-80j"/>
+                <constraint firstItem="6aE-i3-O2M" firstAttribute="top" secondItem="AXG-B6-Mbo" secondAttribute="bottom" constant="8" symbolic="YES" id="LFd-5t-cah"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6aE-i3-O2M" secondAttribute="trailing" constant="8" id="OjK-pt-Gnm"/>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="adH-eC-aR2"/>
+                <constraint firstAttribute="bottom" secondItem="6aE-i3-O2M" secondAttribute="bottom" constant="34" id="hNR-MQ-K8k"/>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nY1-cG-jjW"/>
+                <constraint firstItem="6aE-i3-O2M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="qgv-Da-cAf"/>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.125" id="y87-RR-5TG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

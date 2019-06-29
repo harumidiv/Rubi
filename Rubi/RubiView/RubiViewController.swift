@@ -51,7 +51,7 @@ class RubiViewController: UIViewController {
         let item = reverseList[button.tag]
         if button.titleLabel?.text == "☆" {
             button.setTitleColor(.yellow, for: .normal)
-            button.setTitle("★", for: .normal)
+            button.setTitle("⭐️", for: .normal)
             saveItem(rootText: item.rootText, convertText: item.convertTest)
         } else {
             button.setTitleColor(.black, for: .normal)
