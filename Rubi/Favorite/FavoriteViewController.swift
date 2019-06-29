@@ -17,6 +17,11 @@ class FavoriteViewController: UIViewController {
             tableView.register(cellType: RubiTableViewCell.self)
         }
     }
+    
+    private lazy var presenter: FavoritePresenter =  {
+        return FavoritePresenterImpl(output: self, model: FavoriteModelImpl())
+    }()
+    
     var rubiEntity: [RubiEntity] = []
     let userDefault = UserDefaults.standard
     
@@ -24,55 +29,18 @@ class FavoriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
-            return
-        }
-        let hiragana:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        let kanji:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
-        for i in 0..<hiragana.count {
-            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i])
-            rubiEntity.append(entity)
-        }
+        presenter.favoriteSearch()
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        rubiEntity.removeAll()
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
-            return
-        }
-        let hiragana:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        let kanji:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
-        for i in 0..<hiragana.count {
-            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i])
-            rubiEntity.append(entity)
-        }
+        presenter.favoriteSearch()
         tableView.reloadData()
     }
     
     // MARK: - Event
     
     @objc func deleteFavoriteItem(_ sender: UIButton){
-        print("押されたよ\(sender.tag)")
-        rubiEntity.removeAll()
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
-            return
-        }
-        var hiragana:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        var kanji:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
-
-        hiragana.remove(at: abs(hiragana.count - sender.tag)-1)
-        kanji.remove(at: abs(kanji.count - sender.tag)-1)
-        
-        userDefault.set(hiragana, forKey: Constant.userDeafultKey.hiragana)
-        userDefault.set(kanji, forKey: Constant.userDeafultKey.kanji)
-        userDefault.synchronize()
-        
-        for i in 0..<hiragana.count {
-            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i])
-            rubiEntity.append(entity)
-        }
-        tableView.reloadData()
+        presenter.deleteItem(num: sender.tag)
     }
 }
 
@@ -94,7 +62,21 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         cell.favoriteButton.addTarget(self, action:  #selector(deleteFavoriteItem(_:)), for: .touchUpInside)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return .leastNormalMagnitude
+    }
+}
+
+// MARK: - Extension FavoritePresenterOutpu
+
+extension FavoriteViewController: FavoritePresenterOutput {
+    func showUpdateFavoriteList(entity: [RubiEntity]) {
+        rubiEntity = entity
+        tableView.reloadData()
+    }
+    
+    func showRubiEntityModel(entity: [RubiEntity]) {
+        rubiEntity = entity
     }
 }

@@ -33,7 +33,7 @@ class RubiViewController: UIViewController {
         }
     }
     
-    lazy var presenter: RubiPresenter =  {
+    private lazy var presenter: RubiPresenter =  {
         return RubiPresenterImpl(model: RubiModelImpl(), output: self)
     }()
     
