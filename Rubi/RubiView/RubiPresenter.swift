@@ -33,9 +33,9 @@ class RubiPresenterImpl: RubiPresenter{
         })
     }
     func saveItem(rootText: String, convertText: String) {
-        
+        model.saveItem(rootText: rootText, convertText: convertText)
     }
     func removeItem(rootText: String, convertText: String) {
-        
+        model.removeItem(rootText: rootText, convertText: convertText)
     }
 }

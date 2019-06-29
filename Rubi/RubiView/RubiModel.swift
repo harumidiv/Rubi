@@ -64,11 +64,14 @@ class RubiModelImpl: RubiModel {
         
         var convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
         var rootObjecdts:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
+        
         convertObjects.append(convertText)
         rootObjecdts.append(rootText)
         userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
         userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
         userDefault.synchronize()
+        
+        convertObjects.forEach {print($0)}
     }
     
     func removeItem(rootText: String, convertText: String) {
@@ -83,12 +86,16 @@ class RubiModelImpl: RubiModel {
         
         for (i, text) in convertObjects.enumerated() {
             if text == convertText {
-                convertObjects.remove(at: i)
+                if convertObjects[safe: i] != nil {
+                    convertObjects.remove(at: i)
+                }
             }
         }
         for (i, text) in rootObjecdts.enumerated() {
             if text == rootText {
-                rootObjecdts.remove(at: i)
+                if rootObjecdts[safe: i] != nil {
+                    rootObjecdts.remove(at: i)
+                }
             }
         }
         
