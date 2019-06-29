@@ -38,14 +38,25 @@ class RubiViewController: UIViewController {
     }()
     
     var rubiList:[RubiEntity] = []
-    var rootText: String?
+    var rootText: String = ""
     let userDefault = UserDefaults.standard
 
+    // MAKR: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         title = "Rubi 翻訳"
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        rubiLabel.text = ""
+        rubiTextView.text = "ひらがなに変換したい文字を入力してください"
+        rubiTextView.textColor = UIColor.gray
+    }
+    
+    // MARK: - Event
+    
     @objc func saveFavoriteItem(_ button: UIButton){
         let reverseList:[RubiEntity] = rubiList.reversed()
         let item = reverseList[button.tag]
@@ -60,6 +71,8 @@ class RubiViewController: UIViewController {
         }
     }
     
+    // MARK: - PrivateMethod
+    
     private func saveItem(rootText: String, convertText: String){
         presenter.saveItem(rootText: rootText, convertText: convertText)
     }
@@ -69,6 +82,8 @@ class RubiViewController: UIViewController {
     }
 }
 
+// MARK: - Extension RubiPresenterOutput
+
 extension RubiViewController: RubiPresenterOutput {
     func convertText(hiragana: String) {
         DispatchQueue.main.async {
@@ -76,16 +91,20 @@ extension RubiViewController: RubiPresenterOutput {
             self.indicator.isHidden = true
             self.rubiLabel.isHidden = false
             self.rubiLabel.text = hiragana
-            self.rubiList.append(RubiEntity(rootText: self.rootText!, convertTest: hiragana))
+            self.rubiList.append(RubiEntity(rootText: self.rootText, convertTest: hiragana))
             self.tableView.reloadData()
         }
     }
 }
 
+// MARK: - Extension UITextViewDelegate
+
 extension RubiViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        rubiTextView.textColor = .black
         if (text == "\n") {
             guard let text = rubiTextView.text, text.count > 0 else {
+                rubiTextView.resignFirstResponder()
                 rubiLabel.text = "⚠️文字を入力してください"
                 return true
             }
@@ -103,6 +122,8 @@ extension RubiViewController: UITextViewDelegate {
         textView.text = ""
     }
 }
+
+// MARK: - Extension UITableViewDelegate, UITableViewDataSource
 
 extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

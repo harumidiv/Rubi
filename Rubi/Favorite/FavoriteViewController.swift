@@ -19,6 +19,9 @@ class FavoriteViewController: UIViewController {
     }
     var rubiEntity: [RubiEntity] = []
     let userDefault = UserDefaults.standard
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +51,12 @@ class FavoriteViewController: UIViewController {
         }
         tableView.reloadData()
     }
+    
+    // MARK: - Event
+    
+    @objc func deleteFavoriteItem(_ sender: UIButton){
+        print("押されたよ")
+    }
 }
 
 extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,6 +71,10 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
         cell.rubiLabel.text = item.convertTest
         cell.kanjiLabel.text = item.rootText
         cell.favoriteButton.setTitle("⭐️", for: .normal)
+        cell.favoriteButton.addTarget(self, action:  #selector(deleteFavoriteItem(_:)), for: .touchUpInside)
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
     }
 }
