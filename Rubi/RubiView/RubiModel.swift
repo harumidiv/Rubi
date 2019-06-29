@@ -10,10 +10,13 @@ import Foundation
 
 protocol RubiModel: class{
     func requesetAPI(text: String, result:@escaping(String)->())
+    func saveItem(rootText:String, convertText: String)
+    func removeItem(rootText:String, convertText: String)
 }
 
 
 class RubiModelImpl: RubiModel {
+    private let userDefault = UserDefaults.standard
     private lazy var request: URLRequest = {
         var request = URLRequest(url: Constant.apiURL )
         request.httpMethod = "POST"
@@ -50,5 +53,55 @@ class RubiModelImpl: RubiModel {
             result(jsonData.converted)
         }
         task.resume()
+    }
+    
+    func saveItem(rootText: String, convertText: String) {
+        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
+            userDefault.set([convertText], forKey: Constant.userDeafultKey.hiragana)
+            userDefault.set([rootText], forKey: Constant.userDeafultKey.kanji)
+            return
+        }
+        
+        var convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
+        var rootObjecdts:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
+        
+        convertObjects.append(convertText)
+        rootObjecdts.append(rootText)
+        userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
+        userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
+        userDefault.synchronize()
+        
+        convertObjects.forEach {print($0)}
+    }
+    
+    func removeItem(rootText: String, convertText: String) {
+        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
+            print("userDefaultsに値が保存されていません")
+            return
+        }
+
+        var convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
+        var rootObjecdts:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
+        
+        
+        for (i, text) in convertObjects.enumerated() {
+            if text == convertText {
+                if convertObjects[safe: i] != nil {
+                    convertObjects.remove(at: i)
+                }
+            }
+        }
+        for (i, text) in rootObjecdts.enumerated() {
+            if text == rootText {
+                if rootObjecdts[safe: i] != nil {
+                    rootObjecdts.remove(at: i)
+                }
+            }
+        }
+        
+        userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
+        userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
+        userDefault.synchronize()
+        print("userDefaultから削除しました")
     }
 }

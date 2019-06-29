@@ -20,6 +20,8 @@
 		0D582A2622C6667D009BFC1A /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2522C6667D009BFC1A /* TabController.swift */; };
 		0D582A2A22C666C5009BFC1A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2822C666C5009BFC1A /* FavoriteViewController.swift */; };
 		0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D582A2922C666C5009BFC1A /* FavoriteViewController.xib */; };
+		0D582A2D22C66EF3009BFC1A /* RubiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2C22C66EF3009BFC1A /* RubiEntity.swift */; };
+		0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2E22C7650F009BFC1A /* Swift+Addition.swift */; };
 		0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31422C3810300FD6CA9 /* AppDelegate.swift */; };
 		0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31822C3810300FD6CA9 /* Main.storyboard */; };
 		0D68C31C22C3810600FD6CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31B22C3810500FD6CA9 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		0D582A2522C6667D009BFC1A /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		0D582A2822C666C5009BFC1A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		0D582A2922C666C5009BFC1A /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		0D582A2C22C66EF3009BFC1A /* RubiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiEntity.swift; sourceTree = "<group>"; };
+		0D582A2E22C7650F009BFC1A /* Swift+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Addition.swift"; sourceTree = "<group>"; };
 		0D68C31122C3810300FD6CA9 /* Rubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C31422C3810300FD6CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D68C31922C3810300FD6CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				0D582A1422C3836F009BFC1A /* RubiModel.swift */,
 				0D582A1B22C505D1009BFC1A /* RubiTableViewCell.swift */,
 				0D582A1C22C505D1009BFC1A /* RubiTableViewCell.xib */,
+				0D582A2C22C66EF3009BFC1A /* RubiEntity.swift */,
 			);
 			path = RubiView;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				0D582A2022C50787009BFC1A /* UITableView+Addition.swift */,
 				0D582A2222C507E1009BFC1A /* NSObject+Addition.swift */,
+				0D582A2E22C7650F009BFC1A /* Swift+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -327,8 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */,
 				0D582A2A22C666C5009BFC1A /* FavoriteViewController.swift in Sources */,
 				0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */,
+				0D582A2D22C66EF3009BFC1A /* RubiEntity.swift in Sources */,
 				0D582A1922C4E5EE009BFC1A /* Rubi.swift in Sources */,
 				0D582A1522C3836F009BFC1A /* RubiModel.swift in Sources */,
 				0D582A1D22C505D1009BFC1A /* RubiTableViewCell.swift in Sources */,

@@ -12,6 +12,7 @@ class RubiTableViewCell: UITableViewCell {
     @IBOutlet weak var rubiLabel: UILabel!
     @IBOutlet weak var kanjiLabel: UILabel!
     
+    @IBOutlet weak var favoriteButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
