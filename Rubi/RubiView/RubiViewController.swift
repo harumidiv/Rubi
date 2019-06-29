@@ -34,6 +34,7 @@ class RubiViewController: UIViewController {
     
     var rubiList:[RubiEntity] = []
     var rootText: String?
+    let userDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,8 @@ class RubiViewController: UIViewController {
         title = "Rubi 翻訳"
     }
     @objc func saveFavoriteItem(_ button: UIButton){
-        let item = rubiList[button.tag]
+        let reverseList:[RubiEntity] = rubiList.reversed()
+        let item = reverseList[button.tag]
         if button.titleLabel?.text == "☆" {
             button.setTitleColor(.yellow, for: .normal)
             button.setTitle("★", for: .normal)
@@ -49,16 +51,17 @@ class RubiViewController: UIViewController {
         } else {
             button.setTitleColor(.black, for: .normal)
             button.setTitle("☆", for: .normal)
-            removeItem(rootText: item.rootText, conertText: item.convertTest)
+            removeItem(rootText: item.rootText, convertText: item.convertTest)
         }
     }
+    
     private func saveItem(rootText: String, convertText: String){
-        print("userDefaultに保存しました")
-    }
-    private func removeItem(rootText: String, conertText: String) {
-        print("userDefaultから削除しました")
+        presenter.saveItem(rootText: rootText, convertText: convertText)
     }
     
+    private func removeItem(rootText: String, convertText: String) {
+        presenter.removeItem(rootText: rootText, convertText: convertText)
+    }
 }
 
 extension RubiViewController: RubiPresenterOutput {

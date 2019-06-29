@@ -10,6 +10,8 @@ import Foundation
 
 protocol RubiPresenter: class {
     func requestAPI(text: String)
+    func saveItem(rootText:String, convertText: String)
+    func removeItem(rootText:String, convertText: String)
 }
 
 protocol RubiPresenterOutput: class {
@@ -29,5 +31,11 @@ class RubiPresenterImpl: RubiPresenter{
         model.requesetAPI(text: text, result: {rubi in
             self.output?.convertText(hiragana: rubi)
         })
+    }
+    func saveItem(rootText: String, convertText: String) {
+        
+    }
+    func removeItem(rootText: String, convertText: String) {
+        
     }
 }

@@ -20,4 +20,8 @@ struct Constant {
         static let hiragana = "hiragana"
         static let katakana = "katakana"
     }
+    struct userDeafultKey{
+        static let hiragana = "hiragana"
+        static let kanji = "kanji"
+    }
 }
