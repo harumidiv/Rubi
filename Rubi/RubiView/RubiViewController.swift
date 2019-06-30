@@ -30,6 +30,7 @@ class RubiViewController: UIViewController {
     @IBOutlet weak var rubiLabel: UILabel! {
         didSet {
             rubiLabel.text = ""
+            rubiLabel.lineBreakMode = .byCharWrapping
         }
     }
     
