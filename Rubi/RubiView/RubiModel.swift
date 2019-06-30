@@ -12,6 +12,7 @@ protocol RubiModel: class{
     func requesetAPI(text: String, result:@escaping(String)->())
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
+    func internetConnectionCheck() -> Bool
 }
 
 
@@ -70,8 +71,6 @@ class RubiModelImpl: RubiModel {
         userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
         userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
         userDefault.synchronize()
-        
-        convertObjects.forEach {print($0)}
     }
     
     func removeItem(rootText: String, convertText: String) {
@@ -102,6 +101,13 @@ class RubiModelImpl: RubiModel {
         userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
         userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
         userDefault.synchronize()
-        print("userDefaultから削除しました")
+    }
+    
+    func internetConnectionCheck() -> Bool {
+        
+        if Network.isOnline() {
+            return true
+        }
+        return false
     }
 }

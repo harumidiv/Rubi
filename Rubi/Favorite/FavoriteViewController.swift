@@ -30,6 +30,7 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.favoriteSearch()
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {

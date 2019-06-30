@@ -85,6 +85,13 @@ class RubiViewController: UIViewController {
 // MARK: - Extension RubiPresenterOutput
 
 extension RubiViewController: RubiPresenterOutput {
+    func showInterntConnectionError() {
+        rubiTextView.resignFirstResponder()
+        showInformation(message: "翻訳ができません。インターネットに接続していません。", buttonText: "閉じる")
+        rubiLabel.text = "⚠️インターネットに接続してください"
+        
+    }
+    
     func convertText(hiragana: String) {
         DispatchQueue.main.async {
             self.indicator.startAnimating()
@@ -103,6 +110,11 @@ extension RubiViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         rubiTextView.textColor = .black
         if (text == "\n") {
+            
+            if !presenter.internetConnectionCheck() {
+                return true
+            }
+            
             guard let text = rubiTextView.text, text.count > 0 else {
                 rubiTextView.resignFirstResponder()
                 rubiLabel.text = "⚠️文字を入力してください"

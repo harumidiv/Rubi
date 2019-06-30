@@ -12,14 +12,17 @@ protocol RubiPresenter: class {
     func requestAPI(text: String)
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
+    func internetConnectionCheck() -> Bool
 }
 
 protocol RubiPresenterOutput: class {
     func convertText(hiragana: String)
+    func showInterntConnectionError()
 }
 
 
 class RubiPresenterImpl: RubiPresenter{
+    
     weak var output: RubiPresenterOutput?
     let model: RubiModel
  
@@ -32,10 +35,20 @@ class RubiPresenterImpl: RubiPresenter{
             self.output?.convertText(hiragana: rubi)
         })
     }
+    
     func saveItem(rootText: String, convertText: String) {
         model.saveItem(rootText: rootText, convertText: convertText)
     }
+    
     func removeItem(rootText: String, convertText: String) {
         model.removeItem(rootText: rootText, convertText: convertText)
+    }
+    
+    func internetConnectionCheck() -> Bool {
+        if model.internetConnectionCheck() {
+            return true
+        }
+        output?.showInterntConnectionError()
+        return false
     }
 }
