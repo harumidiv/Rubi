@@ -23,3 +23,13 @@ Pods/*
 *.swp
 !.gitkeep
 .DS_Store
+
+# bandler
+vendor/*
+
+# fastlane
+build/
+fastlane/test_output/*
+fastlane/README.md
+fasten/report.xml
+screenshots/*
