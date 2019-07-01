@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0564281122C9B8F800455D53 /* UINavigationController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564281022C9B8F800455D53 /* UINavigationController+Addition.swift */; };
 		0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A0E22C381F0009BFC1A /* RubiViewController.swift */; };
 		0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D582A0F22C381F0009BFC1A /* RubiViewController.xib */; };
 		0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A1222C3833B009BFC1A /* RubiPresenter.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		039EAE578B83F98C2E14DE86 /* Pods-RubiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiTests.release.xcconfig"; path = "Target Support Files/Pods-RubiTests/Pods-RubiTests.release.xcconfig"; sourceTree = "<group>"; };
+		0564281022C9B8F800455D53 /* UINavigationController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Addition.swift"; sourceTree = "<group>"; };
 		0D582A0E22C381F0009BFC1A /* RubiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiViewController.swift; sourceTree = "<group>"; };
 		0D582A0F22C381F0009BFC1A /* RubiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RubiViewController.xib; sourceTree = "<group>"; };
 		0D582A1222C3833B009BFC1A /* RubiPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiPresenter.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				0D582A2022C50787009BFC1A /* UITableView+Addition.swift */,
 				0D582A2222C507E1009BFC1A /* NSObject+Addition.swift */,
 				0D582A2E22C7650F009BFC1A /* Swift+Addition.swift */,
+				0564281022C9B8F800455D53 /* UINavigationController+Addition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				0D582A2122C50787009BFC1A /* UITableView+Addition.swift in Sources */,
 				0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */,
 				0D582A2322C507E1009BFC1A /* NSObject+Addition.swift in Sources */,
+				0564281122C9B8F800455D53 /* UINavigationController+Addition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

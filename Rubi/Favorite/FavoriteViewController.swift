@@ -38,6 +38,10 @@ class FavoriteViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+    
     // MARK: - Event
     
     @objc func deleteFavoriteItem(_ sender: UIButton){
