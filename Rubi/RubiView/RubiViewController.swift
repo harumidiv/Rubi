@@ -80,30 +80,7 @@ class RubiViewController: UIViewController {
     // MARK: - PrivateMethod
     
     private func favoriteCheck(){
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil {
-            for i in 0..<rubiList.count {
-                rubiList[i].isFavorite = false
-            }
-            return
-        }
-        let convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        
-        if convertObjects.isEmpty {
-            for i in 0..<rubiList.count {
-                rubiList[i].isFavorite = false
-            }
-            return
-        }
-        for i in 0..<rubiList.count {
-            rubiList[i].isFavorite = false
-        }
-        convertObjects.forEach { rubi in
-            for i in 0..<rubiList.count {
-                if rubiList[i].convertTest == rubi {
-                    rubiList[i].isFavorite = true
-                }
-            }
-        }
+        presenter.favoriteCheck(history: rubiList)
     }
     
     private func saveItem(rootText: String, convertText: String){
@@ -118,7 +95,6 @@ class RubiViewController: UIViewController {
 // MARK: - Extension RubiPresenterOutput
 
 extension RubiViewController: RubiPresenterOutput {
-    
     func showInterntConnectionError() {
         rubiTextView.resignFirstResponder()
         showInformation(message: "翻訳ができません。インターネットに接続していません。", buttonText: "閉じる")
@@ -135,6 +111,10 @@ extension RubiViewController: RubiPresenterOutput {
             self.rubiList.append(RubiEntity(rootText: self.rootText, convertTest: hiragana, isFavorite: false))
             self.tableView.reloadData()
         }
+    }
+    
+    func showUpdateHistory(entity: [RubiEntity]) {
+        rubiList = entity
     }
 }
 

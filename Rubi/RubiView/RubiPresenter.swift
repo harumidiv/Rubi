@@ -13,11 +13,13 @@ protocol RubiPresenter: class {
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
     func internetConnectionCheck() -> Bool
+    func favoriteCheck(history: [RubiEntity])
 }
 
 protocol RubiPresenterOutput: class {
     func convertText(hiragana: String)
     func showInterntConnectionError()
+    func showUpdateHistory(entity: [RubiEntity])
 }
 
 
@@ -50,5 +52,8 @@ class RubiPresenterImpl: RubiPresenter{
         }
         output?.showInterntConnectionError()
         return false
+    }
+    func favoriteCheck(history: [RubiEntity]) {
+        output?.showUpdateHistory(entity: model.favoriteCheck(history: history))
     }
 }
