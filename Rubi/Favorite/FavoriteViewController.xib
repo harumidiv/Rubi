@@ -38,7 +38,7 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="6aE-i3-O2M">
-                    <rect key="frame" x="8" y="120" width="398" height="742"/>
+                    <rect key="frame" x="12" y="132" width="390" height="730"/>
                     <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="sectionIndexBackgroundColor" red="1" green="0.4845957628" blue="0.2258272999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
@@ -46,12 +46,12 @@
             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I8M-hK-80j"/>
-                <constraint firstItem="6aE-i3-O2M" firstAttribute="top" secondItem="AXG-B6-Mbo" secondAttribute="bottom" constant="8" symbolic="YES" id="LFd-5t-cah"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6aE-i3-O2M" secondAttribute="trailing" constant="8" id="OjK-pt-Gnm"/>
+                <constraint firstItem="6aE-i3-O2M" firstAttribute="top" secondItem="AXG-B6-Mbo" secondAttribute="bottom" constant="20" id="LFd-5t-cah"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6aE-i3-O2M" secondAttribute="trailing" constant="12" id="OjK-pt-Gnm"/>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="adH-eC-aR2"/>
                 <constraint firstAttribute="bottom" secondItem="6aE-i3-O2M" secondAttribute="bottom" constant="34" id="hNR-MQ-K8k"/>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nY1-cG-jjW"/>
-                <constraint firstItem="6aE-i3-O2M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="qgv-Da-cAf"/>
+                <constraint firstItem="6aE-i3-O2M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="qgv-Da-cAf"/>
                 <constraint firstItem="AXG-B6-Mbo" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.125" id="y87-RR-5TG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

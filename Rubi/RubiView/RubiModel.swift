@@ -13,6 +13,7 @@ protocol RubiModel: class{
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
     func internetConnectionCheck() -> Bool
+    func favoriteCheck(history: [RubiEntity]) -> [RubiEntity]
 }
 
 
@@ -109,5 +110,33 @@ class RubiModelImpl: RubiModel {
             return true
         }
         return false
+    }
+    func favoriteCheck(history: [RubiEntity]) -> [RubiEntity] {
+        var rubiList = history
+        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil {
+            for i in 0..<rubiList.count {
+                rubiList[i].isFavorite = false
+            }
+            return rubiList
+        }
+        let convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
+        
+        if convertObjects.isEmpty {
+            for i in 0..<rubiList.count {
+                rubiList[i].isFavorite = false
+            }
+            return rubiList
+        }
+        for i in 0..<rubiList.count {
+            rubiList[i].isFavorite = false
+        }
+        convertObjects.forEach { rubi in
+            for i in 0..<rubiList.count {
+                if rubiList[i].convertTest == rubi {
+                    rubiList[i].isFavorite = true
+                }
+            }
+        }
+        return rubiList
     }
 }
