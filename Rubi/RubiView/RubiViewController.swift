@@ -51,7 +51,7 @@ class RubiViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //favoriteCheck()
+        favoriteCheck()
         tableView.reloadData()
         rubiLabel.text = ""
         rubiTextView.text = "ひらがなに変換したい文字を入力してください"
@@ -81,23 +81,27 @@ class RubiViewController: UIViewController {
     
     private func favoriteCheck(){
         if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil {
-            //全部falseにする
-            print("userDefaultsに値が保存されていません")
+            for i in 0..<rubiList.count {
+                rubiList[i].isFavorite = false
+            }
             return
         }
-        
         let convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
+        
         if convertObjects.isEmpty {
-            //false
+            for i in 0..<rubiList.count {
+                rubiList[i].isFavorite = false
+            }
+            return
+        }
+        for i in 0..<rubiList.count {
+            rubiList[i].isFavorite = false
         }
         convertObjects.forEach { rubi in
             for i in 0..<rubiList.count {
                 if rubiList[i].convertTest == rubi {
                     rubiList[i].isFavorite = true
-                } else {
-                    rubiList[i].isFavorite = false
                 }
-                
             }
         }
     }
