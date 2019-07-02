@@ -11,4 +11,5 @@ import Foundation
 struct RubiEntity {
     var rootText: String
     var convertTest: String
+    var isFavorite: Bool
 }

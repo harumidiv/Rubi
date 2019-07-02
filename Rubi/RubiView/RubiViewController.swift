@@ -51,6 +51,8 @@ class RubiViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //favoriteCheck()
+        tableView.reloadData()
         rubiLabel.text = ""
         rubiTextView.text = "ひらがなに変換したい文字を入力してください"
         rubiTextView.textColor = UIColor.gray
@@ -61,18 +63,44 @@ class RubiViewController: UIViewController {
     @objc func saveFavoriteItem(_ button: UIButton){
         let reverseList:[RubiEntity] = rubiList.reversed()
         let item = reverseList[button.tag]
+         let num = rubiList.count - button.tag - 1
         if button.titleLabel?.text == "☆" {
             button.setTitleColor(.yellow, for: .normal)
             button.setTitle("⭐️", for: .normal)
+            rubiList[num].isFavorite = true
             saveItem(rootText: item.rootText, convertText: item.convertTest)
         } else {
             button.setTitleColor(.black, for: .normal)
             button.setTitle("☆", for: .normal)
+            rubiList[num].isFavorite = false
             removeItem(rootText: item.rootText, convertText: item.convertTest)
         }
     }
     
     // MARK: - PrivateMethod
+    
+    private func favoriteCheck(){
+        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil {
+            //全部falseにする
+            print("userDefaultsに値が保存されていません")
+            return
+        }
+        
+        let convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
+        if convertObjects.isEmpty {
+            //false
+        }
+        convertObjects.forEach { rubi in
+            for i in 0..<rubiList.count {
+                if rubiList[i].convertTest == rubi {
+                    rubiList[i].isFavorite = true
+                } else {
+                    rubiList[i].isFavorite = false
+                }
+                
+            }
+        }
+    }
     
     private func saveItem(rootText: String, convertText: String){
         presenter.saveItem(rootText: rootText, convertText: convertText)
@@ -86,6 +114,7 @@ class RubiViewController: UIViewController {
 // MARK: - Extension RubiPresenterOutput
 
 extension RubiViewController: RubiPresenterOutput {
+    
     func showInterntConnectionError() {
         rubiTextView.resignFirstResponder()
         showInformation(message: "翻訳ができません。インターネットに接続していません。", buttonText: "閉じる")
@@ -99,7 +128,7 @@ extension RubiViewController: RubiPresenterOutput {
             self.indicator.isHidden = true
             self.rubiLabel.isHidden = false
             self.rubiLabel.text = hiragana
-            self.rubiList.append(RubiEntity(rootText: self.rootText, convertTest: hiragana))
+            self.rubiList.append(RubiEntity(rootText: self.rootText, convertTest: hiragana, isFavorite: false))
             self.tableView.reloadData()
         }
     }
@@ -151,8 +180,16 @@ extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
         cell.kanjiLabel.text = item.rootText
         cell.favoriteButton.tag = indexPath.row
         cell.favoriteButton.addTarget(self, action:  #selector(saveFavoriteItem), for: .touchUpInside)
+        if item.isFavorite {
+            cell.favoriteButton.setTitleColor(.yellow, for: .normal)
+            cell.favoriteButton.setTitle("⭐️", for: .normal)
+        } else {
+            cell.favoriteButton.setTitleColor(.black, for: .normal)
+            cell.favoriteButton.setTitle("☆", for: .normal)
+        }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return .leastNormalMagnitude
     }

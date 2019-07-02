@@ -24,7 +24,7 @@ class FavoriteModelImpl: FavoriteModel {
         let hiragana:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
         let kanji:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
         for i in 0..<hiragana.count {
-            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i])
+            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i], isFavorite: true)
             rubiEntity.append(entity)
         }
         return rubiEntity
@@ -46,7 +46,7 @@ class FavoriteModelImpl: FavoriteModel {
         userDefault.synchronize()
         
         for i in 0..<hiragana.count {
-            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i])
+            let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i], isFavorite: true)
             rubiEntity.append(entity)
         }
         return rubiEntity
