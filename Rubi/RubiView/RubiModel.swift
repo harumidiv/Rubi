@@ -23,7 +23,6 @@ class RubiModelImpl: RubiModel {
         var request = URLRequest(url: Constant.apiURL )
         request.httpMethod = "POST"
         request.addValue(Constant.request.json, forHTTPHeaderField: Constant.request.type)
-        request.addValue(Constant.request.urlencoded, forHTTPHeaderField: Constant.request.type)
         return request
     }()
     
