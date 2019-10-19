@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RubiViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
                 <outlet property="indicator" destination="T9J-aC-IeP" id="rle-Bf-Ry4"/>
+                <outlet property="pickerView" destination="iff-ME-0E1" id="W8i-7i-TJs"/>
                 <outlet property="rubiLabel" destination="jpL-99-H4Q" id="LaJ-1F-4uA"/>
                 <outlet property="rubiTextView" destination="wCZ-l8-DNO" id="2In-Z3-8O6"/>
                 <outlet property="tableView" destination="suM-cU-M5D" id="GhN-nv-1qu"/>
@@ -39,30 +38,30 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひがらな" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgZ-DX-0J3">
-                            <rect key="frame" x="248" y="26" width="102" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="→" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtT-D4-Uzd">
-                            <rect key="frame" x="178.5" y="23" width="25" height="36"/>
+                            <rect key="frame" x="177" y="23" width="28" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iff-ME-0E1">
+                            <rect key="frame" x="221" y="8" width="129" height="66"/>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="hgZ-DX-0J3" secondAttribute="trailing" constant="32" id="0YQ-Jg-rj6"/>
+                        <constraint firstAttribute="height" constant="82" id="372-jS-xXE"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="top" secondItem="NH9-s2-ZbX" secondAttribute="top" constant="23" id="9Fc-ax-7IU"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="centerY" secondItem="NH9-s2-ZbX" secondAttribute="centerY" id="9gb-Gi-MrE"/>
                         <constraint firstItem="GpF-ZD-GUD" firstAttribute="leading" secondItem="NH9-s2-ZbX" secondAttribute="leading" constant="56" id="Ebc-Va-bzv"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="centerX" secondItem="NH9-s2-ZbX" secondAttribute="centerX" id="FN4-J5-qwy"/>
-                        <constraint firstItem="hgZ-DX-0J3" firstAttribute="centerY" secondItem="NH9-s2-ZbX" secondAttribute="centerY" id="Oz1-Py-KMR"/>
+                        <constraint firstItem="iff-ME-0E1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qtT-D4-Uzd" secondAttribute="trailing" constant="16" id="LmO-YC-0yC"/>
+                        <constraint firstAttribute="bottom" secondItem="iff-ME-0E1" secondAttribute="bottom" constant="8" id="Snt-cv-eJB"/>
                         <constraint firstItem="qtT-D4-Uzd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GpF-ZD-GUD" secondAttribute="trailing" constant="16" id="T8n-pA-sqj"/>
                         <constraint firstItem="GpF-ZD-GUD" firstAttribute="centerY" secondItem="NH9-s2-ZbX" secondAttribute="centerY" id="f9H-kD-Cgl"/>
-                        <constraint firstItem="hgZ-DX-0J3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qtT-D4-Uzd" secondAttribute="trailing" constant="16" id="z6W-H8-FMl"/>
+                        <constraint firstItem="iff-ME-0E1" firstAttribute="top" secondItem="NH9-s2-ZbX" secondAttribute="top" constant="8" id="fFt-iN-nBu"/>
+                        <constraint firstAttribute="trailing" secondItem="iff-ME-0E1" secondAttribute="trailing" constant="32" id="gFr-Ye-frj"/>
+                        <constraint firstItem="iff-ME-0E1" firstAttribute="centerY" secondItem="NH9-s2-ZbX" secondAttribute="centerY" id="mjX-0Z-Ivr"/>
                     </constraints>
                 </view>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="T9J-aC-IeP">

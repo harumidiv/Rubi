@@ -27,7 +27,21 @@ class RubiModelImpl: RubiModel {
     }()
     
     func requesetAPI(text: String, result:@escaping(String)->()) {
-        let postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.hiragana)
+        let postData: PostData!
+        
+        if userDefault.object(forKey: "rubiType") == nil {
+                
+            postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.hiragana)
+        } else {
+            
+            let isHiragana = userDefault.bool(forKey: "rubiType")
+            if isHiragana {
+                postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.hiragana)
+            } else {
+                postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.katakana)
+            }
+        }
+            
         
         guard let uploadData = try? JSONEncoder().encode(postData) else {
             print("json生成に失敗しました")
