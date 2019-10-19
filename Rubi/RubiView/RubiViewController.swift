@@ -9,6 +9,13 @@
 import UIKit
 
 class RubiViewController: UIViewController {
+    
+    @IBOutlet weak var pickerView: UIPickerView! {
+        didSet {
+            pickerView.delegate = self
+            pickerView.dataSource = self
+        }
+    }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -33,6 +40,7 @@ class RubiViewController: UIViewController {
             rubiLabel.lineBreakMode = .byCharWrapping
         }
     }
+    let rubiTypeList = ["ひらがな", "カタカナ"]
     
     private lazy var presenter: RubiPresenter =  {
         return RubiPresenterImpl(model: RubiModelImpl(), output: self)
@@ -178,3 +186,22 @@ extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension RubiViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return rubiTypeList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return rubiTypeList[row]
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //TODO userDefailtに保存しどちらを使うか選択
+        print(rubiTypeList[row])
+    }
+    
+}
