@@ -22,12 +22,13 @@ class TabController: UITabBarController {
         var viewControllers: [UIViewController] = []
         
         let firstViewController = UINavigationController(rootViewController:RubiViewController())
-        firstViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.history, tag: 1)
+        firstViewController.tabBarItem = UITabBarItem(title: "ホーム", image: #imageLiteral(resourceName: "home"), tag: 1)
         viewControllers.append(firstViewController)
         
         
         let secondViewController = FavoriteViewController()
-        secondViewController.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.favorites, tag: 2)
+        secondViewController.tabBarItem = UITabBarItem(title: "お気に入り", image: #imageLiteral(resourceName: "favorite"), tag: 2)
+        
         viewControllers.append(secondViewController)
         self.setViewControllers(viewControllers, animated: false)
         
