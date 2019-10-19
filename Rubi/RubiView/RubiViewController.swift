@@ -200,8 +200,14 @@ extension RubiViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //TODO userDefailtに保存しどちらを使うか選択
-        print(rubiTypeList[row])
+        
+        let isHiragana: Bool
+        if row == 0 {
+            isHiragana = true
+        } else {
+            isHiragana = false
+        }
+        userDefault.set(isHiragana, forKey: "rubiType")
     }
     
 }
