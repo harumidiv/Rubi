@@ -47,7 +47,7 @@ class RubiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
-        title = "Rubi 翻訳"
+        self.navigationItem.title = "Rubi 翻訳"
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +76,6 @@ class RubiViewController: UIViewController {
             removeItem(rootText: item.rootText, convertText: item.convertTest)
         }
     }
-    
     // MARK: - PrivateMethod
     
     private func favoriteCheck(){
