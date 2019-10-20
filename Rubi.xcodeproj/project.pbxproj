@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0564281122C9B8F800455D53 /* UINavigationController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564281022C9B8F800455D53 /* UINavigationController+Addition.swift */; };
+		0D020346235CA96C0044745B /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D020344235CA96C0044745B /* RecordingViewController.swift */; };
+		0D020347235CA96C0044745B /* RecordingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D020345235CA96C0044745B /* RecordingViewController.xib */; };
+		0D020349235CA98F0044745B /* RecordingPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D020348235CA98F0044745B /* RecordingPresentor.swift */; };
+		0D02034B235CA9C80044745B /* RecordingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D02034A235CA9C80044745B /* RecordingModel.swift */; };
 		0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A0E22C381F0009BFC1A /* RubiViewController.swift */; };
 		0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D582A0F22C381F0009BFC1A /* RubiViewController.xib */; };
 		0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A1222C3833B009BFC1A /* RubiPresenter.swift */; };
@@ -58,6 +62,10 @@
 /* Begin PBXFileReference section */
 		039EAE578B83F98C2E14DE86 /* Pods-RubiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiTests.release.xcconfig"; path = "Target Support Files/Pods-RubiTests/Pods-RubiTests.release.xcconfig"; sourceTree = "<group>"; };
 		0564281022C9B8F800455D53 /* UINavigationController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Addition.swift"; sourceTree = "<group>"; };
+		0D020344235CA96C0044745B /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		0D020345235CA96C0044745B /* RecordingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordingViewController.xib; sourceTree = "<group>"; };
+		0D020348235CA98F0044745B /* RecordingPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingPresentor.swift; sourceTree = "<group>"; };
+		0D02034A235CA9C80044745B /* RecordingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingModel.swift; sourceTree = "<group>"; };
 		0D582A0E22C381F0009BFC1A /* RubiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiViewController.swift; sourceTree = "<group>"; };
 		0D582A0F22C381F0009BFC1A /* RubiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RubiViewController.xib; sourceTree = "<group>"; };
 		0D582A1222C3833B009BFC1A /* RubiPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiPresenter.swift; sourceTree = "<group>"; };
@@ -127,6 +135,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D020343235CA9540044745B /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				0D020344235CA96C0044745B /* RecordingViewController.swift */,
+				0D020345235CA96C0044745B /* RecordingViewController.xib */,
+				0D020348235CA98F0044745B /* RecordingPresentor.swift */,
+				0D02034A235CA9C80044745B /* RecordingModel.swift */,
+			);
+			path = Recording;
+			sourceTree = "<group>";
+		};
 		0D582A1A22C4E611009BFC1A /* RubiView */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +153,7 @@
 				0D582A0F22C381F0009BFC1A /* RubiViewController.xib */,
 				0D582A1222C3833B009BFC1A /* RubiPresenter.swift */,
 				0D582A1422C3836F009BFC1A /* RubiModel.swift */,
+				0D020343235CA9540044745B /* Recording */,
 			);
 			path = RubiView;
 			sourceTree = "<group>";
@@ -383,6 +403,7 @@
 				0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */,
 				0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */,
 				0D68C31C22C3810600FD6CA9 /* Assets.xcassets in Resources */,
+				0D020347235CA96C0044745B /* RecordingViewController.xib in Resources */,
 				0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +521,8 @@
 				0D582A2D22C66EF3009BFC1A /* RubiEntity.swift in Sources */,
 				0D582A1922C4E5EE009BFC1A /* Rubi.swift in Sources */,
 				0D582A1522C3836F009BFC1A /* RubiModel.swift in Sources */,
+				0D020349235CA98F0044745B /* RecordingPresentor.swift in Sources */,
+				0D020346235CA96C0044745B /* RecordingViewController.swift in Sources */,
 				0D582A3322C79B30009BFC1A /* FavoriteModel.swift in Sources */,
 				0D582A3122C79B24009BFC1A /* FavoritePresenter.swift in Sources */,
 				0D582A1D22C505D1009BFC1A /* RubiTableViewCell.swift in Sources */,
@@ -509,6 +532,7 @@
 				0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */,
 				0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */,
 				0D582A2122C50787009BFC1A /* UITableView+Addition.swift in Sources */,
+				0D02034B235CA9C80044745B /* RecordingModel.swift in Sources */,
 				0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */,
 				0D582A2322C507E1009BFC1A /* NSObject+Addition.swift in Sources */,
 				0564281122C9B8F800455D53 /* UINavigationController+Addition.swift in Sources */,
