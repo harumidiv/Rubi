@@ -84,6 +84,10 @@ class RubiViewController: UIViewController {
             removeItem(rootText: item.rootText, convertText: item.convertTest)
         }
     }
+    //TODO しっかり作り直す
+    @IBAction func recordingTapped(_ sender: Any) {
+        present(RecordingViewController(), animated: true, completion: nil)
+    }
     // MARK: - PrivateMethod
     
     private func favoriteCheck(){

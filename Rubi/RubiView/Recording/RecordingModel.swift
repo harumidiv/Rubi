@@ -15,7 +15,7 @@ protocol RecordingModel {
 }
 
 protocol RecordingModelOutput: class {
-    func RecordingText(text: String) -> String
+    func recordingText(text: String)
 }
 
 class RecordingModelImpl: RecordingModel {
@@ -78,7 +78,8 @@ class RecordingModelImpl: RecordingModel {
             var isFinal = false
 
             if let result = result {
-                print(result.bestTranscription.formattedString)
+//                print(result.bestTranscription.formattedString)
+                self.output.recordingText(text: result.bestTranscription.formattedString)
                 isFinal = result.isFinal
             }
 

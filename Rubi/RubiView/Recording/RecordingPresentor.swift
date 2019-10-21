@@ -14,25 +14,34 @@ protocol RecordingPresenter {
     func stopRecording()
 }
 
+protocol RecordingPresentorOutput: class{
+    func recordingText(text: String)
+}
+
 class RecordingPresentorImpl: RecordingPresenter {
     lazy var model: RecordingModel = {
-            return RecordingModelImpl(output: self)
+        return RecordingModelImpl(output: self)
     }()
+    weak var output: RecordingPresentorOutput?
+    
+    init(output: RecordingPresentorOutput) {
+        self.output = output
+    }
     
     func startRecording() {
         try? model.startRecording()
     }
     
     func stopRecording() {
-        
+        model.stopRecording()
     }
     
     
 }
 
 extension RecordingPresentorImpl: RecordingModelOutput {
-    func RecordingText(text: String) -> String {
-        return ""
+    func recordingText(text: String){
+        output?.recordingText(text: text)
     }
 
 }

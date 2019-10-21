@@ -10,24 +10,43 @@ import UIKit
 
 class RecordingViewController: UIViewController {
 
-    let presentor = RecordingPresentorImpl()
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var recordingLabel: UILabel!
+    
+    lazy var presentor: RecordingPresenter = {
+        return RecordingPresentorImpl(output: self)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Event
+
+    @IBAction func recordingStart(_ sender: Any) {
+        print("start")
         presentor.startRecording()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func recordingStop(_ sender: Any) {
+        presentor.stopRecording()
+        print("stop")
     }
-    */
+    
+    
+    @IBAction func dismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+}
 
+// MARK: - RecordingPresentorOutput
+extension RecordingViewController: RecordingPresentorOutput {
+    
+    func recordingText(text: String) {
+        resultLabel.text = text
+    }
+    
+    
 }
