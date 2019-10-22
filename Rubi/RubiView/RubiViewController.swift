@@ -92,6 +92,7 @@ class RubiViewController: UIViewController {
             self.rubiTextView.textColor = .black
             self.presenter.requestAPI(text: text)
             vc.dismiss(animated: true, completion: nil)
+            self.rubiTextView.resignFirstResponder()
         }
      
         present(vc, animated: true, completion: nil)

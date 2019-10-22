@@ -12,6 +12,7 @@ import Speech
 protocol RecordingModel {
     func startRecording() throws
     func stopRecording()
+    func checkMicrophonePermission(result: @escaping (Bool)->())
 }
 
 protocol RecordingModelOutput: class {
@@ -19,6 +20,7 @@ protocol RecordingModelOutput: class {
 }
 
 class RecordingModelImpl: RecordingModel {
+    
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -29,32 +31,25 @@ class RecordingModelImpl: RecordingModel {
     
     init(output: RecordingModelOutput) {
         self.output = output
-        
-        requestRecognizerAutholization()
     }
     
-    private func requestRecognizerAutholization(){
-        //TODO ハンドリング処理を入れる
+    func checkMicrophonePermission(result: @escaping (Bool)->()) {
+        var permission:Bool = false
+
         SFSpeechRecognizer.requestAuthorization { (status) in
             OperationQueue.main.addOperation {
                     switch status {
                     case .authorized:   // 許可OK
-//                        self.recordButton.isEnabled = true
-//                        self.recordButton.backgroundColor = UIColor.blue
-                        break
+                        result(true)
                     case .denied:       // 拒否
-//                        self.recordButton.isEnabled = false
-//                        self.recordButton.setTitle("録音許可なし", for: .disabled)
-                        break
+                        result(false)
                     case .restricted:   // 限定
-//                        self.recordButton.isEnabled = false
-//                        self.recordButton.setTitle("このデバイスでは無効", for: .disabled)
-                        break
+                        result(false)
                     case .notDetermined:// 不明
-//                        self.recordButton.isEnabled = false
-//                        self.recordButton.setTitle("録音機能が無効", for: .disabled)
-                        break
-                    }
+                        result(false)
+                    @unknown default:
+                        result(false)
+                }
             }
         }
     }

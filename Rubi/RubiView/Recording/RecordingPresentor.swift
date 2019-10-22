@@ -12,13 +12,21 @@ import UIKit
 protocol RecordingPresenter {
     func startRecording()
     func stopRecording()
+    func checkMicrophonePermission()
 }
 
 protocol RecordingPresentorOutput: class{
     func recordingText(text: String)
+    func permissionState(permissin: Bool)
 }
 
 class RecordingPresentorImpl: RecordingPresenter {
+    func checkMicrophonePermission() {
+        model.checkMicrophonePermission() { result in
+            self.output?.permissionState(permissin: result)
+        }
+    }
+    
     lazy var model: RecordingModel = {
         return RecordingModelImpl(output: self)
     }()

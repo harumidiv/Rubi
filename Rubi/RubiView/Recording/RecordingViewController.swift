@@ -36,8 +36,7 @@ class RecordingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        presentor.checkMicrophonePermission()
     }
     
     // MARK: - Event
@@ -78,6 +77,16 @@ class RecordingViewController: UIViewController {
 
 // MARK: - RecordingPresentorOutput
 extension RecordingViewController: RecordingPresentorOutput {
+    func permissionState(permissin: Bool) {
+        if !permissin {
+            self.showInformation(message: "音声入力が許可されていません\n設定画面で許可してください", buttonText: "許可する"){
+                if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
+        }
+    }
+    
     
     func recordingText(text: String) {
         recordText = text
