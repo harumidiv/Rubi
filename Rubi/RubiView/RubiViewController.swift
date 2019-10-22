@@ -101,6 +101,11 @@ class RubiViewController: UIViewController {
         let vc = ImageRecognitionViewController()
         present(vc, animated: true, completion: nil)
     }
+    @IBAction func handwriteingTapped(_ sender: Any) {
+        let vc = HandritingRecognitionViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
     
     // MARK: - PrivateMethod
     
