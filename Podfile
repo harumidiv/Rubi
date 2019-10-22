@@ -6,6 +6,7 @@ target 'Rubi' do
   use_frameworks!
   
   pod 'ReachabilitySwift'
+  pod 'lottie-ios'
 
   # Pods for Rubi
 

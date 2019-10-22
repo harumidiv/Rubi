@@ -7,40 +7,61 @@
 //
 
 import UIKit
+import Lottie
 
 class RecordingViewController: UIViewController {
 
+    @IBOutlet weak var animationView: AnimationView! {
+        didSet {
+            animationView.animation = Animation.named("microphone")
+            animationView.loopMode = .loop
+        }
+    }
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var recordingLabel: UILabel!
     var dismissHandler: ((String) -> Void)?
     var recordText:String = ""
+    var isStarting: Bool = false
     
     lazy var presentor: RecordingPresenter = {
         return RecordingPresentorImpl(output: self)
     }()
     
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
     }
     
     // MARK: - Event
 
+    
     @IBAction func recordingStart(_ sender: Any) {
-        print("start")
+    //ボタン外でtouchEndedされた際にイベントを検知できずrecordingが２回走ってしまうのでflugで管理
+        if isStarting {
+            presentor.stopRecording()
+            dismissHandler?(self.recordText)
+            return
+        }
+        
+        animationView.play()
         recordingLabel.text = "手を離すと録画が止まります"
         presentor.startRecording()
+        isStarting = true
     }
     
     @IBAction func recordingStop(_ sender: Any) {
-        presentor.stopRecording()
+        animationView.stop()
         recordingLabel.text = "タップすると録画が始まります"
+        presentor.stopRecording()
         //Google翻訳のような音を鳴らしたい
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false){_ in
             self.dismissHandler?(self.recordText)
         }
         
-        print("stop")
+         isStarting = false
     }
     
     
@@ -60,3 +81,4 @@ extension RecordingViewController: RecordingPresentorOutput {
     
     
 }
+
