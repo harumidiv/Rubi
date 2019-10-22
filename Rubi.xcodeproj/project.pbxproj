@@ -39,6 +39,8 @@
 		0D68C32A22C3810600FD6CA9 /* RubiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C32922C3810600FD6CA9 /* RubiTests.swift */; };
 		0D68C33522C3810600FD6CA9 /* RubiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C33422C3810600FD6CA9 /* RubiUITests.swift */; };
 		0D925817235E8CE100B7A728 /* lo.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D925816235E8CE100B7A728 /* lo.json */; };
+		0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */; };
+		0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */; };
 		563A9D574A29B90338B5ABC9 /* Pods_Rubi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8E7DA347C022B96B0E15A4 /* Pods_Rubi.framework */; };
 		6C106C22803B9E1EC2A9D68B /* Pods_RubiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7FB142BB07C16901DA799D /* Pods_RubiTests.framework */; };
 		F6BAD6B0EA9401E58ED4A8AD /* Pods_RubiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */; };
@@ -101,6 +103,8 @@
 		0D68C33422C3810600FD6CA9 /* RubiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiUITests.swift; sourceTree = "<group>"; };
 		0D68C33622C3810600FD6CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D925816235E8CE100B7A728 /* lo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lo.json; sourceTree = "<group>"; };
+		0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionViewController.swift; sourceTree = "<group>"; };
+		0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RubiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6173FB8953D2CF1D8ADE6044 /* Pods-Rubi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubi.debug.xcconfig"; path = "Target Support Files/Pods-Rubi/Pods-Rubi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				0D582A0F22C381F0009BFC1A /* RubiViewController.xib */,
 				0D582A1222C3833B009BFC1A /* RubiPresenter.swift */,
 				0D582A1422C3836F009BFC1A /* RubiModel.swift */,
+				0DB9E025235F55AA00CF6004 /* ImageRecognition */,
 				0D020343235CA9540044745B /* Recording */,
 			);
 			path = RubiView;
@@ -271,6 +276,15 @@
 				0D582A1C22C505D1009BFC1A /* RubiTableViewCell.xib */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		0DB9E025235F55AA00CF6004 /* ImageRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */,
+				0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */,
+			);
+			path = ImageRecognition;
 			sourceTree = "<group>";
 		};
 		1191C1BE1C780B4BEA6D9428 /* Frameworks */ = {
@@ -406,6 +420,7 @@
 			files = (
 				0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */,
 				0D582A1E22C505D1009BFC1A /* RubiTableViewCell.xib in Resources */,
+				0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */,
 				0D68318F235E958F007858CD /* microphone.json in Resources */,
 				0D925817235E8CE100B7A728 /* lo.json in Resources */,
 				0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */,
@@ -523,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */,
 				0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */,
 				0D582A2A22C666C5009BFC1A /* FavoriteViewController.swift in Sources */,
 				0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */,

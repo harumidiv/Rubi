@@ -97,6 +97,11 @@ class RubiViewController: UIViewController {
      
         present(vc, animated: true, completion: nil)
     }
+    @IBAction func pictureTapped(_ sender: Any) {
+        let vc = ImageRecognitionViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
     // MARK: - PrivateMethod
     
     private func favoriteCheck(){

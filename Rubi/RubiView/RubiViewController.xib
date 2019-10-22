@@ -151,6 +151,9 @@
                                         <constraint firstAttribute="width" secondItem="ccB-mF-rly" secondAttribute="height" multiplier="1:1" id="jN8-2A-SQJ"/>
                                     </constraints>
                                     <state key="normal" image="picture"/>
+                                    <connections>
+                                        <action selector="pictureTapped:" destination="-1" eventType="touchUpInside" id="Jl5-lq-zEI"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0o-m8-C1k">
                                     <rect key="frame" x="0.0" y="50" width="127" height="15"/>
