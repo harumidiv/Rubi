@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordingViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
                 <outlet property="animationView" destination="3Jg-NW-fGH" id="lJk-OP-0bW"/>
+                <outlet property="descriptionBaseView" destination="5WC-kN-tnx" id="BTI-3S-akt"/>
                 <outlet property="recordingLabel" destination="3m7-bo-U4v" id="cVF-n1-Z3X"/>
                 <outlet property="resultLabel" destination="slW-qn-hpC" id="ePO-Yw-RKU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,13 +34,6 @@
                         <action selector="dismissView:" destination="-1" eventType="touchUpInside" id="aJe-Jt-inh"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップすると録画が始まります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3m7-bo-U4v">
-                    <rect key="frame" x="64.5" y="622" width="285.5" height="24"/>
-                    <color key="backgroundColor" white="0.94681078767123283" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slW-qn-hpC">
                     <rect key="frame" x="20" y="94" width="374" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -47,10 +41,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-NW-fGH" customClass="AnimationView" customModule="Lottie">
-                    <rect key="frame" x="107" y="662" width="200" height="200"/>
+                    <rect key="frame" x="122" y="692" width="170" height="170"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfv-jU-pOb">
-                            <rect key="frame" x="60" y="60" width="80" height="80"/>
+                            <rect key="frame" x="45" y="45" width="80" height="80"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="TJi-gF-e5u"/>
@@ -65,29 +59,48 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="Ow7-m4-VH4"/>
+                        <constraint firstAttribute="height" constant="170" id="Ow7-m4-VH4"/>
                         <constraint firstItem="sfv-jU-pOb" firstAttribute="centerY" secondItem="3Jg-NW-fGH" secondAttribute="centerY" id="bxM-CF-kpH"/>
-                        <constraint firstAttribute="width" constant="200" id="tiN-Er-9jD"/>
+                        <constraint firstAttribute="width" constant="170" id="tiN-Er-9jD"/>
                         <constraint firstItem="sfv-jU-pOb" firstAttribute="centerX" secondItem="3Jg-NW-fGH" secondAttribute="centerX" id="wCJ-Gq-g9g"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WC-kN-tnx">
+                    <rect key="frame" x="54.5" y="682" width="305.5" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップすると録画が始まります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3m7-bo-U4v">
+                            <rect key="frame" x="10" y="3" width="285.5" height="24"/>
+                            <color key="backgroundColor" white="0.94681078767123283" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="3m7-bo-U4v" firstAttribute="centerX" secondItem="5WC-kN-tnx" secondAttribute="centerX" id="7Cy-1F-c11"/>
+                        <constraint firstAttribute="height" constant="30" id="Afh-Hi-t6d"/>
+                        <constraint firstItem="3m7-bo-U4v" firstAttribute="centerY" secondItem="5WC-kN-tnx" secondAttribute="centerY" id="LP0-Bk-hbo"/>
+                        <constraint firstItem="3m7-bo-U4v" firstAttribute="leading" secondItem="5WC-kN-tnx" secondAttribute="leading" constant="10" id="Yu3-KJ-9X0"/>
+                        <constraint firstAttribute="trailing" secondItem="3m7-bo-U4v" secondAttribute="trailing" constant="10" id="kkL-K7-s6S"/>
+                        <constraint firstItem="3m7-bo-U4v" firstAttribute="centerX" secondItem="5WC-kN-tnx" secondAttribute="centerX" id="upP-oF-aey"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="3Jg-NW-fGH" firstAttribute="top" secondItem="3m7-bo-U4v" secondAttribute="bottom" constant="16" id="ABI-8A-tD1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3m7-bo-U4v" secondAttribute="trailing" constant="16" id="B8H-I8-QBR"/>
                 <constraint firstItem="ckg-cE-uT9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="MQO-0Z-eGU"/>
-                <constraint firstItem="3m7-bo-U4v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QCZ-NC-YXR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ckg-cE-uT9" secondAttribute="bottom" constant="30" id="Syy-rc-Un3"/>
+                <constraint firstItem="3Jg-NW-fGH" firstAttribute="top" secondItem="5WC-kN-tnx" secondAttribute="bottom" constant="-20" id="TE1-NM-Mmb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="slW-qn-hpC" secondAttribute="trailing" constant="20" id="THc-DI-hhd"/>
                 <constraint firstItem="3Jg-NW-fGH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Wj1-bM-Z3P"/>
                 <constraint firstItem="3Jg-NW-fGH" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Zb6-LL-9Vq"/>
                 <constraint firstItem="slW-qn-hpC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Zo7-GQ-l2D"/>
                 <constraint firstItem="slW-qn-hpC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="jsh-fH-fKI"/>
-                <constraint firstItem="3m7-bo-U4v" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="msb-GD-GFa"/>
+                <constraint firstItem="5WC-kN-tnx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wVc-ZP-UkD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="115"/>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </view>
     </objects>
     <resources>

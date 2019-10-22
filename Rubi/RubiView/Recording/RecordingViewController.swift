@@ -11,6 +11,11 @@ import Lottie
 
 class RecordingViewController: UIViewController {
 
+    @IBOutlet weak var descriptionBaseView: UIView! {
+        didSet {
+            descriptionBaseView.layer.cornerRadius = descriptionBaseView.frame.height/2
+        }
+    }
     @IBOutlet weak var animationView: AnimationView! {
         didSet {
             animationView.animation = Animation.named("microphone")
