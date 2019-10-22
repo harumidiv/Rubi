@@ -37,6 +37,10 @@ class RecordingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presentor.checkMicrophonePermission()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(viewWillEnterForeground(
+            notification:
+        )), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     // MARK: - Event
@@ -71,6 +75,11 @@ class RecordingViewController: UIViewController {
     
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - PrivateMethod
+    @objc func viewWillEnterForeground(notification: Notification) {
+        presentor.checkMicrophonePermission()
     }
     
 }
