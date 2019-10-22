@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        UserDefaults.standard.set(true, forKey: "rubiType")
         window?.rootViewController = TabController()
         UINavigationBar.appearance().barTintColor = UIColor(red: 229/255, green: 114/255, blue: 31/255, alpha: 1.0)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
@@ -33,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        NotificationCenter.default.post(name: UIApplication.willEnterForegroundNotification, object: nil)
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 

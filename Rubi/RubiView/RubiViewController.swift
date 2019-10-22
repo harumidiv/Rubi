@@ -84,6 +84,19 @@ class RubiViewController: UIViewController {
             removeItem(rootText: item.rootText, convertText: item.convertTest)
         }
     }
+    @IBAction func recordingTapped(_ sender: Any) {
+        let vc = RecordingViewController()
+        vc.dismissHandler = { text in
+            self.rootText = text
+            self.rubiTextView.text = text
+            self.rubiTextView.textColor = .black
+            self.presenter.requestAPI(text: text)
+            vc.dismiss(animated: true, completion: nil)
+            self.rubiTextView.resignFirstResponder()
+        }
+     
+        present(vc, animated: true, completion: nil)
+    }
     // MARK: - PrivateMethod
     
     private func favoriteCheck(){
