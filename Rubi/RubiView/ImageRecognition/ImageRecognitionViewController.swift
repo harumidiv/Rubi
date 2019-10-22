@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import SwiftyTesseract
 
 class ImageRecognitionViewController: UIViewController {
+
+    let swiftyTesseract = SwiftyTesseract(language: RecognitionLanguage.japanese)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let image = UIImage(named: "sample.jpeg") else { return }
+
+         swiftyTesseract.performOCR(on: image) { recognizedString in
+             guard let text = recognizedString else { return }
+             print("\(text)")
+
+        }
     }
 }

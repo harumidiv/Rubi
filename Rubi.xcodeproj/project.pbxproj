@@ -31,6 +31,7 @@
 		0D582A3322C79B30009BFC1A /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3222C79B2F009BFC1A /* FavoriteModel.swift */; };
 		0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3422C86D06009BFC1A /* UIViewController+Addition.swift */; };
 		0D582A3722C87245009BFC1A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3622C87245009BFC1A /* Utils.swift */; };
+		0D622EC3235F600100BCEB08 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0D622EC2235F600100BCEB08 /* tessdata */; };
 		0D68318F235E958F007858CD /* microphone.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D68318E235E958F007858CD /* microphone.json */; };
 		0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31422C3810300FD6CA9 /* AppDelegate.swift */; };
 		0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31822C3810300FD6CA9 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		0D582A3222C79B2F009BFC1A /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		0D582A3422C86D06009BFC1A /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		0D582A3622C87245009BFC1A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
+		0D622EC2235F600100BCEB08 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../Desktop/tessdata; sourceTree = "<group>"; };
 		0D68318E235E958F007858CD /* microphone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = microphone.json; sourceTree = "<group>"; };
 		0D68C31122C3810300FD6CA9 /* Rubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C31422C3810300FD6CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		0D68C31322C3810300FD6CA9 /* Rubi */ = {
 			isa = PBXGroup;
 			children = (
+				0D622EC2235F600100BCEB08 /* tessdata */,
 				0D582A3822C87261009BFC1A /* Domain */,
 				0D68C31422C3810300FD6CA9 /* AppDelegate.swift */,
 				0D582A1622C4E2EC009BFC1A /* Constant.swift */,
@@ -437,6 +440,7 @@
 				0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */,
 				0D68318F235E958F007858CD /* microphone.json in Resources */,
 				0D925817235E8CE100B7A728 /* lo.json in Resources */,
+				0D622EC3235F600100BCEB08 /* tessdata in Resources */,
 				0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */,
 				0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */,
 				0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */,
