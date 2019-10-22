@@ -84,7 +84,6 @@ class RubiViewController: UIViewController {
             removeItem(rootText: item.rootText, convertText: item.convertTest)
         }
     }
-    //TODO しっかり作り直す
     @IBAction func recordingTapped(_ sender: Any) {
         let vc = RecordingViewController()
         vc.dismissHandler = { text in
