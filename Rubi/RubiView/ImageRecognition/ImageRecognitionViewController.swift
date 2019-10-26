@@ -7,24 +7,31 @@
 //
 
 import UIKit
-import SwiftyTesseract
+
 
 class ImageRecognitionViewController: UIViewController {
 
-    let swiftyTesseract = SwiftyTesseract(language: RecognitionLanguage.japanese)
+
+    private lazy var presentor: ImageRecognitionPresentor = {
+        return ImageRecognitionPresentorImpl(model: ImageRecognitionModelImpl(), output: self)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .green
+
 
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let image = UIImage(named: "sample.jpeg") else { return }
+                presentor.recognition(image: image)
+    }
+}
 
-         swiftyTesseract.performOCR(on: image) { recognizedString in
-             guard let text = recognizedString else { return }
-             print("\(text)")
-
-        }
+extension ImageRecognitionViewController: ImageRecognitionPresentorOutput {
+    func showRecognitionMessage(message: String) {
+        self.view.backgroundColor = .white
+        print(message)
     }
 }
