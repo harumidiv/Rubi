@@ -218,6 +218,8 @@ extension RubiViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - Extension UIPickerViewDataSource, UIPickerViewDelegate
+
 extension RubiViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

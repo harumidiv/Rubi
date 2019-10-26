@@ -20,6 +20,7 @@ class ImageRecognitionViewController: UIViewController {
     
     @IBOutlet weak var recognizeTextView: UITextView! {
         didSet {
+            recognizeTextView.delegate = self
             recognizeTextView.text = "No Image をタップして画像を選択してください"
         }
     }
@@ -90,5 +91,15 @@ extension ImageRecognitionViewController: UIImagePickerControllerDelegate,UINavi
         }
 
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ImageRecognitionViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+        self.recognizeTextView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
