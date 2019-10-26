@@ -12,7 +12,11 @@ import UIKit
 class ImageRecognitionViewController: UIViewController {
 
     
-    @IBOutlet weak var recognizeTextView: UITextView!
+    @IBOutlet weak var recognizeTextView: UITextView! {
+        didSet {
+            recognizeTextView.text = "No Image をタップして画像を選択してください"
+        }
+    }
     @IBOutlet weak var userPhoto: UIImageView! {
         didSet {
             picker.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -39,12 +43,10 @@ class ImageRecognitionViewController: UIViewController {
 
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        
-        //ピッカーを表示する
+    @IBAction func imageTapped(_ sender: Any) {
         present(picker, animated: true, completion: nil)
     }
+
 }
 // MARK: - Extension ImageRecognitionPresentorOutput
 

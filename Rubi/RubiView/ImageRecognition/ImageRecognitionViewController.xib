@@ -20,9 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-Lc-yR2">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="hb8-Lc-yR2">
                     <rect key="frame" x="20" y="80" width="374" height="358.5"/>
                     <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="1Xg-Qp-fJH" appends="YES" id="Ovd-zR-UiO"/>
+                    </connections>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvU-Bz-wrE">
                     <rect key="frame" x="184" y="732" width="46" height="30"/>
@@ -53,6 +57,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="109"/>
         </view>
+        <tapGestureRecognizer id="1Xg-Qp-fJH">
+            <connections>
+                <action selector="imageTapped:" destination="-1" id="WI8-Cc-urD"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="noImage" width="600" height="600"/>
