@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageRecognitionViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="indicator" destination="wCw-Qq-Sns" id="0GB-xW-yx6"/>
                 <outlet property="recognizeTextView" destination="teG-pE-wmu" id="kD9-QR-nRc"/>
                 <outlet property="userPhoto" destination="hb8-Lc-yR2" id="lTU-QC-7Ca"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,6 +44,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Qq-Sns" customClass="AnimationView" customModule="Lottie">
+                    <rect key="frame" x="157" y="209" width="100" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="olp-Kr-2g3"/>
+                        <constraint firstAttribute="height" constant="100" id="poj-8Z-aUx"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -53,7 +62,9 @@
                 <constraint firstItem="teG-pE-wmu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="Tff-a6-ut2"/>
                 <constraint firstItem="qvU-Bz-wrE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gVD-kY-qa1"/>
                 <constraint firstItem="teG-pE-wmu" firstAttribute="top" secondItem="hb8-Lc-yR2" secondAttribute="bottom" constant="8" id="jBN-5T-sev"/>
+                <constraint firstItem="wCw-Qq-Sns" firstAttribute="centerY" secondItem="hb8-Lc-yR2" secondAttribute="centerY" id="jcz-Ur-8yx"/>
                 <constraint firstItem="hb8-Lc-yR2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="36" id="lzY-19-p1w"/>
+                <constraint firstItem="wCw-Qq-Sns" firstAttribute="centerX" secondItem="hb8-Lc-yR2" secondAttribute="centerX" id="mu1-ZL-g17"/>
                 <constraint firstItem="hb8-Lc-yR2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="pMR-na-Tbb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hb8-Lc-yR2" secondAttribute="trailing" constant="20" id="poh-e7-edF"/>
             </constraints>

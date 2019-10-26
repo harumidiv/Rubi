@@ -37,11 +37,11 @@
 		0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31D22C3810600FD6CA9 /* LaunchScreen.storyboard */; };
 		0D68C32A22C3810600FD6CA9 /* RubiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C32922C3810600FD6CA9 /* RubiTests.swift */; };
 		0D68C33522C3810600FD6CA9 /* RubiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C33422C3810600FD6CA9 /* RubiUITests.swift */; };
-		0D925817235E8CE100B7A728 /* lo.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D925816235E8CE100B7A728 /* lo.json */; };
 		0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */; };
 		0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */; };
 		0DB9E02D235F572900CF6004 /* HandritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */; };
 		0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */; };
+		491DCA1F23645F8D00E297E4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 491DCA1E23645F8D00E297E4 /* loading.json */; };
 		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
 		49AD8BD1236426D000217869 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 49AD8BD0236426D000217869 /* tessdata */; };
 		49AD8BD9236429E000217869 /* RubiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BD8236429E000217869 /* RubiEntity.swift */; };
@@ -106,12 +106,12 @@
 		0D68C33022C3810600FD6CA9 /* RubiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C33422C3810600FD6CA9 /* RubiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiUITests.swift; sourceTree = "<group>"; };
 		0D68C33622C3810600FD6CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D925816235E8CE100B7A728 /* lo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lo.json; sourceTree = "<group>"; };
 		0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRecognitionViewController.xib; sourceTree = "<group>"; };
 		0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandritingRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandritingRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		491DCA1E23645F8D00E297E4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = SOURCE_ROOT; };
 		49AD8BD0236426D000217869 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		49AD8BD8236429E000217869 /* RubiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubiEntity.swift; sourceTree = "<group>"; };
@@ -329,8 +329,8 @@
 			children = (
 				0D68C31822C3810300FD6CA9 /* Main.storyboard */,
 				0D68C31D22C3810600FD6CA9 /* LaunchScreen.storyboard */,
-				0D925816235E8CE100B7A728 /* lo.json */,
 				0D68318E235E958F007858CD /* microphone.json */,
+				491DCA1E23645F8D00E297E4 /* loading.json */,
 				0D68C31B22C3810500FD6CA9 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -459,10 +459,10 @@
 			files = (
 				0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */,
 				0D582A1E22C505D1009BFC1A /* RubiTableViewCell.xib in Resources */,
+				491DCA1F23645F8D00E297E4 /* loading.json in Resources */,
 				49AD8BD1236426D000217869 /* tessdata in Resources */,
 				0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */,
 				0D68318F235E958F007858CD /* microphone.json in Resources */,
-				0D925817235E8CE100B7A728 /* lo.json in Resources */,
 				0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */,
 				0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */,
 				0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */,

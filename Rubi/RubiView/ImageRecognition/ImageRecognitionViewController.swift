@@ -7,10 +7,16 @@
 //
 
 import UIKit
-
+import Lottie
 
 class ImageRecognitionViewController: UIViewController {
 
+    @IBOutlet weak var indicator: AnimationView! {
+        didSet {
+            indicator.animation = Animation.named("loading")
+            indicator.loopMode = .loop
+        }
+    }
     
     @IBOutlet weak var recognizeTextView: UITextView! {
         didSet {
@@ -35,7 +41,6 @@ class ImageRecognitionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
     }
     // MARK: - Event
     
@@ -43,6 +48,7 @@ class ImageRecognitionViewController: UIViewController {
         dismissHandler?(recognizeTextView.text)
     }
     @IBAction func imageTapped(_ sender: Any) {
+        recognizeTextView.text = ""
         present(picker, animated: true, completion: nil)
     }
 
@@ -52,6 +58,8 @@ class ImageRecognitionViewController: UIViewController {
 extension ImageRecognitionViewController: ImageRecognitionPresentorOutput {
     func showRecognitionMessage(message: String) {
         DispatchQueue.main.async {
+            self.indicator.isHidden = true
+            self.indicator.stop()
             self.recognizeTextView.text = message
         }
         print(message)
@@ -67,6 +75,10 @@ extension ImageRecognitionViewController: UIImagePickerControllerDelegate,UINavi
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
            
             userPhoto.image = image
+            indicator.isHidden = false
+            indicator.play()
+            
+            //メインスレッドだと固まるのでサブスレッドで画像の認識処理を行う
             let userQueue = DispatchQueue.global(qos: .userInitiated)
             userQueue.async {
                 self.presentor.recognition(image: image)
