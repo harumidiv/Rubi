@@ -19,7 +19,6 @@ class ImageRecognitionModelImpl: ImageRecognitionModel {
     func recognition(image: UIImage, completion: @escaping (String) -> ()) {
         swiftyTesseract.performOCR(on: image) { recognizedString in
              guard let text = recognizedString else { return }
-//             print("\(text)")
             completion(text)
 
         }

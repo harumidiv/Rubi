@@ -25,15 +25,11 @@
 		0D582A2622C6667D009BFC1A /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2522C6667D009BFC1A /* TabController.swift */; };
 		0D582A2A22C666C5009BFC1A /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2822C666C5009BFC1A /* FavoriteViewController.swift */; };
 		0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D582A2922C666C5009BFC1A /* FavoriteViewController.xib */; };
-		0D582A2D22C66EF3009BFC1A /* RubiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2C22C66EF3009BFC1A /* RubiEntity.swift */; };
 		0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A2E22C7650F009BFC1A /* Swift+Addition.swift */; };
 		0D582A3122C79B24009BFC1A /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3022C79B24009BFC1A /* FavoritePresenter.swift */; };
 		0D582A3322C79B30009BFC1A /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3222C79B2F009BFC1A /* FavoriteModel.swift */; };
 		0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3422C86D06009BFC1A /* UIViewController+Addition.swift */; };
-		0D582A3722C87245009BFC1A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3622C87245009BFC1A /* Utils.swift */; };
-		0D622EC3235F600100BCEB08 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0D622EC2235F600100BCEB08 /* tessdata */; };
 		0D622EC52363F75F00BCEB08 /* ImageRecognitionPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */; };
-		0D622EC72363F77100BCEB08 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D622EC62363F77000BCEB08 /* ImageRecognitionModel.swift */; };
 		0D68318F235E958F007858CD /* microphone.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D68318E235E958F007858CD /* microphone.json */; };
 		0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31422C3810300FD6CA9 /* AppDelegate.swift */; };
 		0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31822C3810300FD6CA9 /* Main.storyboard */; };
@@ -46,6 +42,10 @@
 		0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */; };
 		0DB9E02D235F572900CF6004 /* HandritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */; };
 		0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */; };
+		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
+		49AD8BD1236426D000217869 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 49AD8BD0236426D000217869 /* tessdata */; };
+		49AD8BD9236429E000217869 /* RubiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BD8236429E000217869 /* RubiEntity.swift */; };
+		49AD8BDB23642A2A00217869 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BDA23642A2A00217869 /* Utils.swift */; };
 		563A9D574A29B90338B5ABC9 /* Pods_Rubi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8E7DA347C022B96B0E15A4 /* Pods_Rubi.framework */; };
 		6C106C22803B9E1EC2A9D68B /* Pods_RubiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7FB142BB07C16901DA799D /* Pods_RubiTests.framework */; };
 		F6BAD6B0EA9401E58ED4A8AD /* Pods_RubiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */; };
@@ -88,15 +88,11 @@
 		0D582A2522C6667D009BFC1A /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		0D582A2822C666C5009BFC1A /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		0D582A2922C666C5009BFC1A /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
-		0D582A2C22C66EF3009BFC1A /* RubiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RubiEntity.swift; path = ../RubiView/RubiEntity.swift; sourceTree = "<group>"; };
 		0D582A2E22C7650F009BFC1A /* Swift+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Addition.swift"; sourceTree = "<group>"; };
 		0D582A3022C79B24009BFC1A /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		0D582A3222C79B2F009BFC1A /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		0D582A3422C86D06009BFC1A /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
-		0D582A3622C87245009BFC1A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
-		0D622EC2235F600100BCEB08 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../Desktop/tessdata; sourceTree = "<group>"; };
 		0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionPresentor.swift; sourceTree = "<group>"; };
-		0D622EC62363F77000BCEB08 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = /Users/sagawaharumi/Documents/githab/Rubi/Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = "<absolute>"; };
 		0D68318E235E958F007858CD /* microphone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = microphone.json; sourceTree = "<group>"; };
 		0D68C31122C3810300FD6CA9 /* Rubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C31422C3810300FD6CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +112,10 @@
 		0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandritingRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandritingRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = SOURCE_ROOT; };
+		49AD8BD0236426D000217869 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		49AD8BD8236429E000217869 /* RubiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubiEntity.swift; sourceTree = "<group>"; };
+		49AD8BDA23642A2A00217869 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RubiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6173FB8953D2CF1D8ADE6044 /* Pods-Rubi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubi.debug.xcconfig"; path = "Target Support Files/Pods-Rubi/Pods-Rubi.debug.xcconfig"; sourceTree = "<group>"; };
 		7822E0F232AF4D97D5B06BC1 /* Pods-Rubi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubi.release.xcconfig"; path = "Target Support Files/Pods-Rubi/Pods-Rubi.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 		0D582A1A22C4E611009BFC1A /* RubiView */ = {
 			isa = PBXGroup;
 			children = (
+				49AD8BD8236429E000217869 /* RubiEntity.swift */,
 				0D582A0E22C381F0009BFC1A /* RubiViewController.swift */,
 				0D582A0F22C381F0009BFC1A /* RubiViewController.xib */,
 				0D582A1222C3833B009BFC1A /* RubiPresenter.swift */,
@@ -209,15 +210,6 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
-		0D582A3822C87261009BFC1A /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				0D582A3622C87245009BFC1A /* Utils.swift */,
-				0D582A2C22C66EF3009BFC1A /* RubiEntity.swift */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
 		0D68C30822C3810300FD6CA9 = {
 			isa = PBXGroup;
 			children = (
@@ -243,21 +235,16 @@
 		0D68C31322C3810300FD6CA9 /* Rubi */ = {
 			isa = PBXGroup;
 			children = (
-				0D622EC2235F600100BCEB08 /* tessdata */,
-				0D582A3822C87261009BFC1A /* Domain */,
+				49AD8BD0236426D000217869 /* tessdata */,
+				49AD8BDC23642A4300217869 /* Domain */,
 				0D68C31422C3810300FD6CA9 /* AppDelegate.swift */,
-				0D582A1622C4E2EC009BFC1A /* Constant.swift */,
-				0D582A1822C4E5EE009BFC1A /* Rubi.swift */,
+				49AD8BDD23642A8800217869 /* Common */,
 				0D582A1F22C50773009BFC1A /* Extension */,
 				0D71684D22CB17CB00BF39BF /* CustomView */,
 				0D582A2422C665A1009BFC1A /* RootTabBar */,
 				0D582A2722C66692009BFC1A /* Favorite */,
 				0D582A1A22C4E611009BFC1A /* RubiView */,
-				0D68C31822C3810300FD6CA9 /* Main.storyboard */,
-				0D925816235E8CE100B7A728 /* lo.json */,
-				0D68318E235E958F007858CD /* microphone.json */,
-				0D68C31B22C3810500FD6CA9 /* Assets.xcassets */,
-				0D68C31D22C3810600FD6CA9 /* LaunchScreen.storyboard */,
+				49AD8BDE23642A9D00217869 /* Resource */,
 				0D68C32022C3810600FD6CA9 /* Info.plist */,
 			);
 			path = Rubi;
@@ -296,7 +283,7 @@
 				0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */,
 				0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */,
 				0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */,
-				0D622EC62363F77000BCEB08 /* ImageRecognitionModel.swift */,
+				49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */,
 			);
 			path = ImageRecognition;
 			sourceTree = "<group>";
@@ -318,6 +305,35 @@
 				5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49AD8BDC23642A4300217869 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				0D582A1822C4E5EE009BFC1A /* Rubi.swift */,
+				49AD8BDA23642A2A00217869 /* Utils.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		49AD8BDD23642A8800217869 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0D582A1622C4E2EC009BFC1A /* Constant.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		49AD8BDE23642A9D00217869 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0D68C31822C3810300FD6CA9 /* Main.storyboard */,
+				0D68C31D22C3810600FD6CA9 /* LaunchScreen.storyboard */,
+				0D925816235E8CE100B7A728 /* lo.json */,
+				0D68318E235E958F007858CD /* microphone.json */,
+				0D68C31B22C3810500FD6CA9 /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		F7944AA35B5F57966CC69D46 /* Pods */ = {
@@ -443,10 +459,10 @@
 			files = (
 				0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */,
 				0D582A1E22C505D1009BFC1A /* RubiTableViewCell.xib in Resources */,
+				49AD8BD1236426D000217869 /* tessdata in Resources */,
 				0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */,
 				0D68318F235E958F007858CD /* microphone.json in Resources */,
 				0D925817235E8CE100B7A728 /* lo.json in Resources */,
-				0D622EC3235F600100BCEB08 /* tessdata in Resources */,
 				0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */,
 				0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */,
 				0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */,
@@ -565,9 +581,10 @@
 			files = (
 				0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */,
 				0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */,
+				49AD8BD9236429E000217869 /* RubiEntity.swift in Sources */,
 				0D582A2A22C666C5009BFC1A /* FavoriteViewController.swift in Sources */,
 				0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */,
-				0D582A2D22C66EF3009BFC1A /* RubiEntity.swift in Sources */,
+				49AD8BDB23642A2A00217869 /* Utils.swift in Sources */,
 				0D582A1922C4E5EE009BFC1A /* Rubi.swift in Sources */,
 				0D582A1522C3836F009BFC1A /* RubiModel.swift in Sources */,
 				0D020349235CA98F0044745B /* RecordingPresentor.swift in Sources */,
@@ -575,14 +592,13 @@
 				0D582A3322C79B30009BFC1A /* FavoriteModel.swift in Sources */,
 				0D582A3122C79B24009BFC1A /* FavoritePresenter.swift in Sources */,
 				0D582A1D22C505D1009BFC1A /* RubiTableViewCell.swift in Sources */,
-				0D582A3722C87245009BFC1A /* Utils.swift in Sources */,
 				0D582A1722C4E2EC009BFC1A /* Constant.swift in Sources */,
 				0D582A2622C6667D009BFC1A /* TabController.swift in Sources */,
 				0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */,
 				0D622EC52363F75F00BCEB08 /* ImageRecognitionPresentor.swift in Sources */,
+				49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */,
 				0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */,
 				0DB9E02D235F572900CF6004 /* HandritingRecognitionViewController.swift in Sources */,
-				0D622EC72363F77100BCEB08 /* ImageRecognitionModel.swift in Sources */,
 				0D582A2122C50787009BFC1A /* UITableView+Addition.swift in Sources */,
 				0D02034B235CA9C80044745B /* RecordingModel.swift in Sources */,
 				0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */,
