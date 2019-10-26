@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 protocol RubiModel: class{
     func requesetAPI(text: String, result:@escaping(String)->())
     func saveItem(rootText:String, convertText: String)
