@@ -7,6 +7,7 @@ target 'Rubi' do
   
   pod 'ReachabilitySwift'
   pod 'lottie-ios'
+  pod 'SwiftyTesseract', '2.1.0'
 
   # Pods for Rubi
 
