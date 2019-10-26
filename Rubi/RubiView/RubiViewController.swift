@@ -99,6 +99,15 @@ class RubiViewController: UIViewController {
     }
     @IBAction func pictureTapped(_ sender: Any) {
         let vc = ImageRecognitionViewController()
+        vc.dismissHandler = {text in
+            self.rootText = text
+            self.rubiTextView.text = text
+            self.rubiTextView.textColor = .black
+            self.presenter.requestAPI(text: text)
+            vc.dismiss(animated: true, completion: nil)
+            self.rubiTextView.resignFirstResponder()
+            
+        }
         present(vc, animated: true, completion: nil)
     }
     @IBAction func handwriteingTapped(_ sender: Any) {

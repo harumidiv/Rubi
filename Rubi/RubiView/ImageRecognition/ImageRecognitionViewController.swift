@@ -20,29 +20,28 @@ class ImageRecognitionViewController: UIViewController {
     @IBOutlet weak var userPhoto: UIImageView! {
         didSet {
             picker.sourceType = UIImagePickerController.SourceType.photoLibrary
-
-            //デリゲートを設定する
             picker.delegate = self
-
-            //現れるピッカーNavigationBarの文字色を設定する
-            picker.navigationBar.tintColor = UIColor.white
-
-            //現れるピッカーNavigationBarの背景色を設定する
-            picker.navigationBar.barTintColor = UIColor.gray
         }
     }
+    var dismissHandler: ((String) -> Void)?
     var picker: UIImagePickerController! = UIImagePickerController()
 
     private lazy var presentor: ImageRecognitionPresentor = {
         return ImageRecognitionPresentorImpl(model: ImageRecognitionModelImpl(), output: self)
     }()
+    
+    // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
     }
+    // MARK: - Event
     
+    @IBAction func dismissView(_ sender: Any) {
+        dismissHandler?(recognizeTextView.text)
+    }
     @IBAction func imageTapped(_ sender: Any) {
         present(picker, animated: true, completion: nil)
     }
