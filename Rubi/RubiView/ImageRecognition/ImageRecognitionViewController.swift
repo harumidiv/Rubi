@@ -11,8 +11,10 @@ import Lottie
 
 class ImageRecognitionViewController: UIViewController {
 
+    @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var indicator: AnimationView! {
         didSet {
+            indicator.isHidden = true
             indicator.animation = Animation.named("loading")
             indicator.loopMode = .loop
         }
@@ -62,8 +64,8 @@ extension ImageRecognitionViewController: ImageRecognitionPresentorOutput {
             self.indicator.isHidden = true
             self.indicator.stop()
             self.recognizeTextView.text = message
+            self.dismissButton.isHidden = false
         }
-        print(message)
     }
 }
 
@@ -87,7 +89,6 @@ extension ImageRecognitionViewController: UIImagePickerControllerDelegate,UINavi
             
         } else{
             self.showInformation(message: "画像の解析に失敗しました、正しい画像を選択してください", buttonText: "閉じる")
-            print("Error")
         }
 
         self.dismiss(animated: true, completion: nil)

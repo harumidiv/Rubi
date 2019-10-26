@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageRecognitionViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="dismissButton" destination="qvU-Bz-wrE" id="lcd-qy-mRR"/>
                 <outlet property="indicator" destination="wCw-Qq-Sns" id="0GB-xW-yx6"/>
                 <outlet property="recognizeTextView" destination="teG-pE-wmu" id="kD9-QR-nRc"/>
                 <outlet property="userPhoto" destination="hb8-Lc-yR2" id="lTU-QC-7Ca"/>
@@ -29,9 +30,17 @@
                         <outletCollection property="gestureRecognizers" destination="1Xg-Qp-fJH" appends="YES" id="Ovd-zR-UiO"/>
                     </connections>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvU-Bz-wrE">
-                    <rect key="frame" x="184" y="732" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvU-Bz-wrE">
+                    <rect key="frame" x="107" y="731" width="200" height="45"/>
+                    <color key="backgroundColor" red="0.85490196078431369" green="0.54117647058823526" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="DOs-NF-NJJ"/>
+                        <constraint firstAttribute="width" constant="200" id="oPk-Pa-kCB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                    <state key="normal" title="翻訳">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="dismissView:" destination="-1" eventType="touchUpInside" id="eBv-NH-gxb"/>
                     </connections>
@@ -39,12 +48,12 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="teG-pE-wmu">
                     <rect key="frame" x="20" y="446.5" width="374" height="268.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Qq-Sns" customClass="AnimationView" customModule="Lottie">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCw-Qq-Sns" customClass="AnimationView" customModule="Lottie">
                     <rect key="frame" x="157" y="209" width="100" height="100"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -55,8 +64,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="qvU-Bz-wrE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="teG-pE-wmu" secondAttribute="bottom" constant="16" id="3W6-qJ-zdJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="teG-pE-wmu" secondAttribute="trailing" constant="20" id="6PU-1v-YLu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qvU-Bz-wrE" secondAttribute="bottom" constant="100" id="D1I-1f-KGl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qvU-Bz-wrE" secondAttribute="bottom" priority="750" constant="100" id="D1I-1f-KGl"/>
                 <constraint firstItem="hb8-Lc-yR2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="J71-3t-382"/>
                 <constraint firstItem="teG-pE-wmu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Shd-ip-cX0"/>
                 <constraint firstItem="teG-pE-wmu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="Tff-a6-ut2"/>
