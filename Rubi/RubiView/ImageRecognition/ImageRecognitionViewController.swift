@@ -39,8 +39,7 @@ class ImageRecognitionViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let image = UIImage(named: "sample.jpeg") else { return }
-//        presentor.recognition(image: image)
+
         
         //ピッカーを表示する
         present(picker, animated: true, completion: nil)
@@ -50,7 +49,10 @@ class ImageRecognitionViewController: UIViewController {
 
 extension ImageRecognitionViewController: ImageRecognitionPresentorOutput {
     func showRecognitionMessage(message: String) {
-        self.view.backgroundColor = .white
+        DispatchQueue.main.async {
+            //TODO 文字を反映する
+            self.view.backgroundColor = .brown
+        }
         print(message)
     }
 }
@@ -64,7 +66,13 @@ extension ImageRecognitionViewController: UIImagePickerControllerDelegate,UINavi
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
            
             userPhoto.image = image
+            let userQueue = DispatchQueue.global(qos: .userInitiated)
+            userQueue.async {
+                self.presentor.recognition(image: image)
+            }
+            
         } else{
+            self.showInformation(message: "画像の解析に失敗しました、正しい画像を選択してください", buttonText: "閉じる")
             print("Error")
         }
 
