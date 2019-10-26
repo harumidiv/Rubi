@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageRecognitionViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="recognizeTextView" destination="teG-pE-wmu" id="kD9-QR-nRc"/>
                 <outlet property="userPhoto" destination="hb8-Lc-yR2" id="lTU-QC-7Ca"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,12 +28,24 @@
                     <rect key="frame" x="184" y="732" width="46" height="30"/>
                     <state key="normal" title="Button"/>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="teG-pE-wmu">
+                    <rect key="frame" x="20" y="446.5" width="374" height="268.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="teG-pE-wmu" secondAttribute="trailing" constant="20" id="6PU-1v-YLu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qvU-Bz-wrE" secondAttribute="bottom" constant="100" id="D1I-1f-KGl"/>
                 <constraint firstItem="hb8-Lc-yR2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="J71-3t-382"/>
+                <constraint firstItem="teG-pE-wmu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Shd-ip-cX0"/>
+                <constraint firstItem="teG-pE-wmu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="Tff-a6-ut2"/>
                 <constraint firstItem="qvU-Bz-wrE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gVD-kY-qa1"/>
+                <constraint firstItem="teG-pE-wmu" firstAttribute="top" secondItem="hb8-Lc-yR2" secondAttribute="bottom" constant="8" id="jBN-5T-sev"/>
                 <constraint firstItem="hb8-Lc-yR2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="36" id="lzY-19-p1w"/>
                 <constraint firstItem="hb8-Lc-yR2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="pMR-na-Tbb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hb8-Lc-yR2" secondAttribute="trailing" constant="20" id="poh-e7-edF"/>

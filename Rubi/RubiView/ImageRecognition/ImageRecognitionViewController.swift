@@ -12,6 +12,7 @@ import UIKit
 class ImageRecognitionViewController: UIViewController {
 
     
+    @IBOutlet weak var recognizeTextView: UITextView!
     @IBOutlet weak var userPhoto: UIImageView! {
         didSet {
             picker.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -50,8 +51,7 @@ class ImageRecognitionViewController: UIViewController {
 extension ImageRecognitionViewController: ImageRecognitionPresentorOutput {
     func showRecognitionMessage(message: String) {
         DispatchQueue.main.async {
-            //TODO 文字を反映する
-            self.view.backgroundColor = .brown
+            self.recognizeTextView.text = message
         }
         print(message)
     }
