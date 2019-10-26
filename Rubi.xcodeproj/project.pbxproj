@@ -32,6 +32,8 @@
 		0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3422C86D06009BFC1A /* UIViewController+Addition.swift */; };
 		0D582A3722C87245009BFC1A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D582A3622C87245009BFC1A /* Utils.swift */; };
 		0D622EC3235F600100BCEB08 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 0D622EC2235F600100BCEB08 /* tessdata */; };
+		0D622EC52363F75F00BCEB08 /* ImageRecognitionPresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */; };
+		0D622EC72363F77100BCEB08 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D622EC62363F77000BCEB08 /* ImageRecognitionModel.swift */; };
 		0D68318F235E958F007858CD /* microphone.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D68318E235E958F007858CD /* microphone.json */; };
 		0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C31422C3810300FD6CA9 /* AppDelegate.swift */; };
 		0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D68C31822C3810300FD6CA9 /* Main.storyboard */; };
@@ -93,6 +95,8 @@
 		0D582A3422C86D06009BFC1A /* UIViewController+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Addition.swift"; sourceTree = "<group>"; };
 		0D582A3622C87245009BFC1A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
 		0D622EC2235F600100BCEB08 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = ../../../../Desktop/tessdata; sourceTree = "<group>"; };
+		0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionPresentor.swift; sourceTree = "<group>"; };
+		0D622EC62363F77000BCEB08 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = /Users/sagawaharumi/Documents/githab/Rubi/Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = "<absolute>"; };
 		0D68318E235E958F007858CD /* microphone.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = microphone.json; sourceTree = "<group>"; };
 		0D68C31122C3810300FD6CA9 /* Rubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D68C31422C3810300FD6CA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 			children = (
 				0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */,
 				0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */,
+				0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */,
+				0D622EC62363F77000BCEB08 /* ImageRecognitionModel.swift */,
 			);
 			path = ImageRecognition;
 			sourceTree = "<group>";
@@ -573,8 +579,10 @@
 				0D582A1722C4E2EC009BFC1A /* Constant.swift in Sources */,
 				0D582A2622C6667D009BFC1A /* TabController.swift in Sources */,
 				0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */,
+				0D622EC52363F75F00BCEB08 /* ImageRecognitionPresentor.swift in Sources */,
 				0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */,
 				0DB9E02D235F572900CF6004 /* HandritingRecognitionViewController.swift in Sources */,
+				0D622EC72363F77100BCEB08 /* ImageRecognitionModel.swift in Sources */,
 				0D582A2122C50787009BFC1A /* UITableView+Addition.swift in Sources */,
 				0D02034B235CA9C80044745B /* RecordingModel.swift in Sources */,
 				0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */,
