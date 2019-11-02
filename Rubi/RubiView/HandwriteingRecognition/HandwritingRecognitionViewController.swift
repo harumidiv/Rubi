@@ -17,17 +17,36 @@ class HandritingRecognitionViewController: UIViewController {
             sketchView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 0.9)
         }
     }
+    
+    lazy var presenter: HandwriteingPresenter = {
+        return HandwriteingPresenterImpl(output: self, model: HandwriteingModelImpl())
+    }()
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
+        // TODO ボタンが押された時に直す
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
+            self.view.backgroundColor = .brown
             self.createImage()
         }
         
     }
-    func createImage() {
+    private func createImage() {
         let image = UIGraphicsImageRenderer(size: sketchView.bounds.size).image { context in
             sketchView.layer.render(in: context.cgContext)
         }
+        presenter.recognition(image: image)
     }
+}
+
+// MARK: - Extension HandwriteingPresenterOutput
+
+extension HandritingRecognitionViewController: HandwriteingPresenterOutput {
+    func showRecognitionMessage(message: String) {
+        print(message)
+    }
+    
     
 }

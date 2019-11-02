@@ -13,3 +13,14 @@ extension Array {
         return indices.contains(index) ? self[index] : nil
     }
 }
+
+// メインスレッドの場合は同期的に実行し、それ以外の場合はメインスレッドで実行するようにスケジューリングします
+func runOnMain(block: @escaping () -> Void) {
+    guard Thread.isMainThread else {
+        DispatchQueue.main.async {
+            runOnMain(block: block)
+        }
+        return
+    }
+    block()
+}
