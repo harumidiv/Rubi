@@ -133,6 +133,10 @@ class RubiViewController: UIViewController {
 // MARK: - Extension RubiPresenterOutput
 
 extension RubiViewController: RubiPresenterOutput {
+    func showServerError() {
+        showInformation(message: "⚠️Server Errorが発生しています。しばらくしてから使用してください", buttonText: "閉じる")
+    }
+    
     func showInterntConnectionError() {
         rubiTextView.resignFirstResponder()
         showInformation(message: "翻訳ができません。インターネットに接続していません。", buttonText: "閉じる")

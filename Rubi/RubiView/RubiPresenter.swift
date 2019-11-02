@@ -20,6 +20,7 @@ protocol RubiPresenterOutput: class {
     func convertText(hiragana: String)
     func showInterntConnectionError()
     func showUpdateHistory(entity: [RubiEntity])
+    func showServerError()
 }
 
 
@@ -38,7 +39,7 @@ class RubiPresenterImpl: RubiPresenter{
             case .success(let text):
                  self.output?.convertText(hiragana: text)
             case .failure(_):
-                // TODO サーバエラーのアラート
+                self.output?.showServerError()
                 break
             }
         }
