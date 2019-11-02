@@ -49,8 +49,9 @@ final class UserStore {
 
 extension UserStore {
     static func favoriteItemIsNil() -> Bool  {
-        //TODO nilチェックの処理
-        return true
-        
+        if UserDefaults.standard.object(forKey: Key.hiragana.rawValue) == nil, UserDefaults.standard.object(forKey: Key.kanji.rawValue) == nil {
+            return true
+        }
+        return false
     }
 }

@@ -19,7 +19,6 @@ protocol RubiModel: class{
 
 
 class RubiModelImpl: RubiModel {
-    private let userDefault = UserDefaults.standard
     private lazy var request: URLRequest = {
         var request = URLRequest(url: Constant.apiURL )
         request.httpMethod = "POST"
@@ -66,31 +65,30 @@ class RubiModelImpl: RubiModel {
     }
     
     func saveItem(rootText: String, convertText: String) {
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
-            userDefault.set([convertText], forKey: Constant.userDeafultKey.hiragana)
-            userDefault.set([rootText], forKey: Constant.userDeafultKey.kanji)
+        if UserStore.favoriteItemIsNil() {
+            UserStore.hiragana = [convertText]
+            UserStore.kanji = [rootText]
             return
         }
         
-        var convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        var rootObjecdts:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
+        var convertObjects:[String] = UserStore.hiragana
+        var rootObjecdts:[String] = UserStore.kanji
         
         convertObjects.append(convertText)
         rootObjecdts.append(rootText)
-        userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
-        userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
-        userDefault.synchronize()
+        
+        UserStore.hiragana = convertObjects
+        UserStore.kanji = rootObjecdts
     }
     
     func removeItem(rootText: String, convertText: String) {
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
+        if UserStore.favoriteItemIsNil() {
             print("userDefaultsに値が保存されていません")
             return
         }
 
-        var convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        var rootObjecdts:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
-        
+        var convertObjects:[String] = UserStore.hiragana
+        var rootObjecdts:[String] = UserStore.kanji
         
         for (i, text) in convertObjects.enumerated() {
             if text == convertText {
@@ -106,10 +104,8 @@ class RubiModelImpl: RubiModel {
                 }
             }
         }
-        
-        userDefault.set(convertObjects, forKey: Constant.userDeafultKey.hiragana)
-        userDefault.set(rootObjecdts, forKey: Constant.userDeafultKey.kanji)
-        userDefault.synchronize()
+        UserStore.hiragana = convertObjects
+        UserStore.kanji = rootObjecdts
     }
     
     func internetConnectionCheck() -> Bool {
@@ -121,13 +117,13 @@ class RubiModelImpl: RubiModel {
     }
     func favoriteCheck(history: [RubiEntity]) -> [RubiEntity] {
         var rubiList = history
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil {
+        if UserStore.favoriteItemIsNil() {
             for i in 0..<rubiList.count {
                 rubiList[i].isFavorite = false
             }
             return rubiList
         }
-        let convertObjects:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
+        let convertObjects:[String] = UserStore.hiragana
         
         if convertObjects.isEmpty {
             for i in 0..<rubiList.count {

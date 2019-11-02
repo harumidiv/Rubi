@@ -48,7 +48,6 @@ class RubiViewController: UIViewController {
     
     var rubiList:[RubiEntity] = []
     var rootText: String = ""
-    let userDefault = UserDefaults.standard
 
     // MAKR: - LifeCycle
     
