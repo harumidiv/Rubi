@@ -241,7 +241,7 @@ extension RubiViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         } else {
             isHiragana = false
         }
-        userDefault.set(isHiragana, forKey: "rubiType")
+        UserStore.isHiragana = isHiragana
     }
     
 }

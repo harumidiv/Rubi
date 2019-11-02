@@ -29,18 +29,12 @@ class RubiModelImpl: RubiModel {
     
     func requesetAPI(text: String, result:@escaping(String)->()) {
         let postData: PostData!
-        
-        if userDefault.object(forKey: "rubiType") == nil {
-                
+    
+        let isHiragana = UserStore.isHiragana
+        if isHiragana {
             postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.hiragana)
         } else {
-            
-            let isHiragana = userDefault.bool(forKey: "rubiType")
-            if isHiragana {
-                postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.hiragana)
-            } else {
-                postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.katakana)
-            }
+            postData = PostData(app_id: Constant.appID , sentence: text, output_type: Constant.convertType.katakana)
         }
             
         
