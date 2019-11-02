@@ -33,9 +33,15 @@ class RubiPresenterImpl: RubiPresenter{
         self.output = output
     }
     func requestAPI(text: String) {
-        model.requesetAPI(text: text, result: {rubi in
-            self.output?.convertText(hiragana: rubi)
-        })
+        model.requesetAPI(text: text) { rubi in
+            switch rubi {
+            case .success(let text):
+                 self.output?.convertText(hiragana: text)
+            case .failure(_):
+                // TODO サーバエラーのアラート
+                break
+            }
+        }
     }
     
     func saveItem(rootText: String, convertText: String) {

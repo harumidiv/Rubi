@@ -10,13 +10,12 @@ import Foundation
 
 
 protocol RubiModel: class{
-    func requesetAPI(text: String, result:@escaping(String)->())
+    func requesetAPI(text: String, result:@escaping(Result<String, Error>)->())
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
     func internetConnectionCheck() -> Bool
     func favoriteCheck(history: [RubiEntity]) -> [RubiEntity]
 }
-
 
 class RubiModelImpl: RubiModel {
     private lazy var request: URLRequest = {
@@ -26,7 +25,7 @@ class RubiModelImpl: RubiModel {
         return request
     }()
     
-    func requesetAPI(text: String, result:@escaping(String)->()) {
+    func requesetAPI(text: String, result:@escaping(Result<String, Error>)->()) {
         let postData: PostData!
     
         let isHiragana = UserStore.isHiragana
@@ -38,28 +37,27 @@ class RubiModelImpl: RubiModel {
             
         
         guard let uploadData = try? JSONEncoder().encode(postData) else {
-            print("json生成に失敗しました")
             return
         }
         request.httpBody = uploadData
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
             if let error = error {
-                print ("error: \(error)")
+                result(.failure(error))
                 return
             }
             
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                    print ("server error")
+                    result(.failure(error!))
                     return
             }
             
             guard let data = data, let jsonData = try? JSONDecoder().decode(Rubi.self, from: data) else {
-                print("json変換に失敗しました")
+                result(.failure(error!))
                 return
             }
-            result(jsonData.converted)
+            result(.success(jsonData.converted))
         }
         task.resume()
     }
