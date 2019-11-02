@@ -23,7 +23,6 @@ class FavoriteViewController: UIViewController {
     }()
     
     var rubiEntity: [RubiEntity] = []
-    let userDefault = UserDefaults.standard
     
     // MARK: - LifeCycle
     
