@@ -7,24 +7,27 @@
 //
 
 import UIKit
+import Sketch
 
 class HandritingRecognitionViewController: UIViewController {
 
+    @IBOutlet weak var sketchView: SketchView! {
+        didSet {
+            sketchView.drawTool = .pen
+            sketchView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 0.9)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { _ in
+            self.createImage()
+        }
+        
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func createImage() {
+        let image = UIGraphicsImageRenderer(size: sketchView.bounds.size).image { context in
+            sketchView.layer.render(in: context.cgContext)
+        }
     }
-    */
-
+    
 }

@@ -111,6 +111,7 @@ class RubiViewController: UIViewController {
     }
     @IBAction func handwriteingTapped(_ sender: Any) {
         let vc = HandritingRecognitionViewController()
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
