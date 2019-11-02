@@ -14,15 +14,15 @@ protocol FavoriteModel: class{
 }
 
 class FavoriteModelImpl: FavoriteModel {
-    let userDefault = UserDefaults.standard
     
     func favoriteSearch() -> [RubiEntity] {
         var rubiEntity:[RubiEntity] = []
         
-        if dataIsNil(){return rubiEntity}
+         if UserStore.favoriteItemIsNil() { return rubiEntity}
         
-        let hiragana:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        let kanji:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
+        let hiragana:[String] = UserStore.hiragana
+        let kanji:[String] = UserStore.kanji
+        
         for i in 0..<hiragana.count {
             let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i], isFavorite: true)
             rubiEntity.append(entity)
@@ -33,17 +33,16 @@ class FavoriteModelImpl: FavoriteModel {
     func deleteItem(num: Int) -> [RubiEntity] {
         var rubiEntity:[RubiEntity] = []
         
-        if dataIsNil(){return rubiEntity}
+         if UserStore.favoriteItemIsNil() { return rubiEntity}
         
-        var hiragana:[String] = userDefault.array(forKey: Constant.userDeafultKey.hiragana) as! [String]
-        var kanji:[String] = userDefault.array(forKey: Constant.userDeafultKey.kanji) as! [String]
-        
+        var hiragana:[String] = UserStore.hiragana
+        var kanji:[String] = UserStore.kanji
+
         hiragana.remove(at: abs(hiragana.count - num)-1)
         kanji.remove(at: abs(kanji.count - num)-1)
         
-        userDefault.set(hiragana, forKey: Constant.userDeafultKey.hiragana)
-        userDefault.set(kanji, forKey: Constant.userDeafultKey.kanji)
-        userDefault.synchronize()
+        UserStore.hiragana = hiragana
+        UserStore.kanji = kanji
         
         for i in 0..<hiragana.count {
             let entity = RubiEntity(rootText: kanji[i], convertTest: hiragana[i], isFavorite: true)
@@ -52,10 +51,4 @@ class FavoriteModelImpl: FavoriteModel {
         return rubiEntity
     }
     
-    private func dataIsNil() -> Bool{
-        if userDefault.object(forKey: Constant.userDeafultKey.hiragana) == nil, userDefault.object(forKey: Constant.userDeafultKey.kanji) == nil {
-            return true
-        }
-        return false
-    }
 }

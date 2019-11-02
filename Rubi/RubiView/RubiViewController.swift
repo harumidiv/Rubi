@@ -48,7 +48,6 @@ class RubiViewController: UIViewController {
     
     var rubiList:[RubiEntity] = []
     var rootText: String = ""
-    let userDefault = UserDefaults.standard
 
     // MAKR: - LifeCycle
     
@@ -241,7 +240,7 @@ extension RubiViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         } else {
             isHiragana = false
         }
-        userDefault.set(isHiragana, forKey: "rubiType")
+        UserStore.isHiragana = isHiragana
     }
     
 }
