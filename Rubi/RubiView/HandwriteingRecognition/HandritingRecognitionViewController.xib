@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HandwritingRecognitionViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="recognizeButton" destination="Ig9-6V-pLJ" id="TGr-aC-FNs"/>
                 <outlet property="resultText" destination="GYF-41-Riz" id="vxz-zY-XvW"/>
                 <outlet property="sketchView" destination="ZEY-fd-t92" id="3Qe-gp-MOO"/>
+                <outlet property="translationButton" destination="H8a-Uc-NB7" id="rM4-T1-GpV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,7 +49,7 @@
                         <action selector="recognize:" destination="-1" eventType="touchUpInside" id="spQ-mw-KCe"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8a-Uc-NB7">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8a-Uc-NB7">
                     <rect key="frame" x="232.5" y="732" width="165.5" height="80"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

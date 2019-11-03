@@ -17,12 +17,14 @@ class HandritingRecognitionViewController: UIViewController {
             sketchView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 0.9)
         }
     }
+    @IBOutlet weak var translationButton: UIButton!
+    @IBOutlet weak var recognizeButton: UIButton!
+    @IBOutlet weak var resultText: UILabel!
     
     lazy var presenter: HandwriteingPresenter = {
         return HandwriteingPresenterImpl(output: self, model: HandwriteingModelImpl())
     }()
     
-    @IBOutlet weak var resultText: UILabel!
     var translationMessage: String = ""
     var dismissHandler: ((String) -> Void)?
     
@@ -32,23 +34,26 @@ class HandritingRecognitionViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private func createImage() {
-        let image = UIGraphicsImageRenderer(size: sketchView.bounds.size).image { context in
-            sketchView.layer.render(in: context.cgContext)
-        }
-        presenter.recognition(image: image)
-    }
-    
     // MARK: - Event
     
     @IBAction func recognize(_ sender: Any) {
         self.createImage()
         sketchView.clear()
+        translationButton.isHidden = true
+        recognizeButton.isHidden = true
     }
     
     @IBAction func translation(_ sender: Any) {
         dismissHandler?(translationMessage)
     }
+    
+    // MARK: - PrivateMethod
+    private func createImage() {
+           let image = UIGraphicsImageRenderer(size: sketchView.bounds.size).image { context in
+               sketchView.layer.render(in: context.cgContext)
+           }
+           presenter.recognition(image: image)
+       }
     
 }
 
@@ -58,7 +63,9 @@ extension HandritingRecognitionViewController: HandwriteingPresenterOutput {
     func showRecognitionMessage(message: String) {
         resultText.text = message
         translationMessage = message
+        DispatchQueue.main.async {
+            self.translationButton.isHidden = false
+            self.recognizeButton.isHidden = false
+        }
     }
-    
-    
 }
