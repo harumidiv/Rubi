@@ -111,6 +111,14 @@ class RubiViewController: UIViewController {
     }
     @IBAction func handwriteingTapped(_ sender: Any) {
         let vc = HandritingRecognitionViewController()
+        vc.dismissHandler = { text in
+            self.rootText = text
+            self.rubiTextView.text = text
+            self.rubiTextView.textColor = .black
+            self.presenter.requestAPI(text: text)
+            vc.dismiss(animated: true, completion: nil)
+            self.rubiTextView.resignFirstResponder()
+        }
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }

@@ -22,30 +22,42 @@ class HandritingRecognitionViewController: UIViewController {
         return HandwriteingPresenterImpl(output: self, model: HandwriteingModelImpl())
     }()
     
+    @IBOutlet weak var resultText: UILabel!
+    var translationMessage: String = ""
+    var dismissHandler: ((String) -> Void)?
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO ボタンが押された時に直す
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            self.view.backgroundColor = .brown
-            self.createImage()
-        }
-        
     }
+    
     private func createImage() {
         let image = UIGraphicsImageRenderer(size: sketchView.bounds.size).image { context in
             sketchView.layer.render(in: context.cgContext)
         }
         presenter.recognition(image: image)
     }
+    
+    // MARK: - Event
+    
+    @IBAction func recognize(_ sender: Any) {
+        self.createImage()
+        sketchView.clear()
+    }
+    
+    @IBAction func translation(_ sender: Any) {
+        dismissHandler?(translationMessage)
+    }
+    
 }
 
 // MARK: - Extension HandwriteingPresenterOutput
 
 extension HandritingRecognitionViewController: HandwriteingPresenterOutput {
     func showRecognitionMessage(message: String) {
-        print(message)
+        resultText.text = message
+        translationMessage = message
     }
     
     

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HandwritingRecognitionViewController" customModule="Rubi" customModuleProvider="target">
             <connections>
+                <outlet property="resultText" destination="GYF-41-Riz" id="vxz-zY-XvW"/>
                 <outlet property="sketchView" destination="ZEY-fd-t92" id="3Qe-gp-MOO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,6 +43,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="recognize:" destination="-1" eventType="touchUpInside" id="spQ-mw-KCe"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8a-Uc-NB7">
                     <rect key="frame" x="232.5" y="732" width="165.5" height="80"/>
@@ -58,7 +62,16 @@
                             <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="translation:" destination="-1" eventType="touchUpInside" id="St8-LO-YcQ"/>
+                    </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-41-Riz">
+                    <rect key="frame" x="30" y="510.5" width="354" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -66,6 +79,7 @@
                 <constraint firstItem="ZEY-fd-t92" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Exr-v4-kTl"/>
                 <constraint firstItem="Ig9-6V-pLJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" id="Qi0-Ig-ltv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H8a-Uc-NB7" secondAttribute="trailing" constant="16" id="S9J-qM-iXa"/>
+                <constraint firstItem="GYF-41-Riz" firstAttribute="top" secondItem="LoG-dA-YSJ" secondAttribute="bottom" constant="30" id="UKa-0x-Stj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LoG-dA-YSJ" secondAttribute="trailing" constant="16" id="V33-cC-6Ka"/>
                 <constraint firstItem="LoG-dA-YSJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="V5G-OP-Omg"/>
                 <constraint firstItem="ZEY-fd-t92" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="Vse-bd-0sc"/>
@@ -73,7 +87,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="H8a-Uc-NB7" secondAttribute="bottom" constant="50" id="fmX-O1-Y50"/>
                 <constraint firstItem="ZEY-fd-t92" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="hV6-nN-oB3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZEY-fd-t92" secondAttribute="trailing" constant="20" id="jyH-k2-OMQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GYF-41-Riz" secondAttribute="trailing" constant="30" id="kb8-QR-wHi"/>
+                <constraint firstItem="Ig9-6V-pLJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GYF-41-Riz" secondAttribute="bottom" constant="16" id="teV-KV-rm8"/>
                 <constraint firstItem="Ig9-6V-pLJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="us0-Om-K9J"/>
+                <constraint firstItem="GYF-41-Riz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="xMa-kD-UEz"/>
                 <constraint firstItem="H8a-Uc-NB7" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.4" id="zoe-2E-c1M"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
