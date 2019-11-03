@@ -1,24 +1,28 @@
 PODS:
   - lottie-ios (3.1.3)
   - ReachabilitySwift (4.3.1)
+  - Sketch (2.0)
   - SwiftyTesseract (2.1.0)
 
 DEPENDENCIES:
   - lottie-ios
   - ReachabilitySwift
+  - Sketch
   - SwiftyTesseract (= 2.1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - lottie-ios
     - ReachabilitySwift
+    - Sketch
     - SwiftyTesseract
 
 SPEC CHECKSUMS:
   lottie-ios: 496ac5cea1bbf1a7bd1f1f472f3232eb1b8d744b
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  Sketch: c54b898799ba34cb282b57ff42b5d0a6071e855f
   SwiftyTesseract: e3404b09f982790ec1538b5071e57b97c8cb4007
 
-PODFILE CHECKSUM: ad8fa60e1114a9b464d387edefacbe5de1387f31
+PODFILE CHECKSUM: 008660954fced52d177e6f68c97a97a2fe812a09
 
 COCOAPODS: 1.7.1

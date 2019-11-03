@@ -39,9 +39,11 @@
 		0D68C33522C3810600FD6CA9 /* RubiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D68C33422C3810600FD6CA9 /* RubiUITests.swift */; };
 		0DB72ED3236D173400838A8D /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB72ED2236D173400838A8D /* UserStore.swift */; };
 		0DB72ED4236D247200838A8D /* RubiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BD8236429E000217869 /* RubiEntity.swift */; };
+		0DB72ED6236DC40300838A8D /* HandwriteingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB72ED5236DC40300838A8D /* HandwriteingPresenter.swift */; };
+		0DB72ED8236DC45400838A8D /* HandwriteingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB72ED7236DC45400838A8D /* HandwriteingModel.swift */; };
 		0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */; };
 		0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */; };
-		0DB9E02D235F572900CF6004 /* HandritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */; };
+		0DB9E02D235F572900CF6004 /* HandwritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */; };
 		0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */; };
 		491DCA1F23645F8D00E297E4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 491DCA1E23645F8D00E297E4 /* loading.json */; };
 		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
@@ -108,9 +110,11 @@
 		0D68C33422C3810600FD6CA9 /* RubiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiUITests.swift; sourceTree = "<group>"; };
 		0D68C33622C3810600FD6CA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB72ED2236D173400838A8D /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		0DB72ED5236DC40300838A8D /* HandwriteingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwriteingPresenter.swift; sourceTree = "<group>"; };
+		0DB72ED7236DC45400838A8D /* HandwriteingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwriteingModel.swift; sourceTree = "<group>"; };
 		0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageRecognitionViewController.xib; sourceTree = "<group>"; };
-		0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandritingRecognitionViewController.swift; sourceTree = "<group>"; };
+		0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandritingRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		491DCA1E23645F8D00E297E4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
@@ -282,9 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				0DB9E026235F55E800CF6004 /* ImageRecognitionViewController.swift */,
-				0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */,
 				0D622EC42363F75F00BCEB08 /* ImageRecognitionPresentor.swift */,
 				49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */,
+				0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */,
 			);
 			path = ImageRecognition;
 			sourceTree = "<group>";
@@ -292,7 +296,9 @@
 		0DB9E02A235F570300CF6004 /* HandwriteingRecognition */ = {
 			isa = PBXGroup;
 			children = (
-				0DB9E02B235F572900CF6004 /* HandritingRecognitionViewController.swift */,
+				0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */,
+				0DB72ED5236DC40300838A8D /* HandwriteingPresenter.swift */,
+				0DB72ED7236DC45400838A8D /* HandwriteingModel.swift */,
 				0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */,
 			);
 			path = HandwriteingRecognition;
@@ -593,6 +599,7 @@
 				0D020346235CA96C0044745B /* RecordingViewController.swift in Sources */,
 				0D582A3322C79B30009BFC1A /* FavoriteModel.swift in Sources */,
 				0D582A3122C79B24009BFC1A /* FavoritePresenter.swift in Sources */,
+				0DB72ED6236DC40300838A8D /* HandwriteingPresenter.swift in Sources */,
 				0DB72ED3236D173400838A8D /* UserStore.swift in Sources */,
 				0D582A1D22C505D1009BFC1A /* RubiTableViewCell.swift in Sources */,
 				0D582A1722C4E2EC009BFC1A /* Constant.swift in Sources */,
@@ -602,8 +609,9 @@
 				0D622EC52363F75F00BCEB08 /* ImageRecognitionPresentor.swift in Sources */,
 				49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */,
 				0D582A1022C381F0009BFC1A /* RubiViewController.swift in Sources */,
-				0DB9E02D235F572900CF6004 /* HandritingRecognitionViewController.swift in Sources */,
+				0DB9E02D235F572900CF6004 /* HandwritingRecognitionViewController.swift in Sources */,
 				0D582A2122C50787009BFC1A /* UITableView+Addition.swift in Sources */,
+				0DB72ED8236DC45400838A8D /* HandwriteingModel.swift in Sources */,
 				0D02034B235CA9C80044745B /* RecordingModel.swift in Sources */,
 				0D582A3522C86D06009BFC1A /* UIViewController+Addition.swift in Sources */,
 				0D582A2322C507E1009BFC1A /* NSObject+Addition.swift in Sources */,
