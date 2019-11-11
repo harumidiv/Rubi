@@ -42,6 +42,7 @@ class RubiModelImpl: RubiModel {
         request.httpBody = uploadData
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            //TODO エラーをしっかり返す
             if let error = error {
                 result(.failure(error))
                 return
@@ -49,7 +50,9 @@ class RubiModelImpl: RubiModel {
             
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                    result(.failure(error!))
+                    if error != nil {
+                        result(.failure(error!))
+                    }
                     return
             }
             
