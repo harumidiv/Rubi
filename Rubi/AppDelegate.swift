@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserStore.isHiragana = true
         window?.rootViewController = TabController()
-        UINavigationBar.appearance().barTintColor = UIColor(red: 229/255, green: 114/255, blue: 31/255, alpha: 1.0)
-        UITabBar.appearance().tintColor = UIColor(red: 229/255, green: 114/255, blue: 31/255, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = Constant.themeColor
+        UITabBar.appearance().tintColor = Constant.themeColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         return true
