@@ -45,6 +45,7 @@
 		0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */; };
 		0DB9E02D235F572900CF6004 /* HandwritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */; };
 		0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */; };
+		490A924D2488FA8C006C16F0 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A924C2488FA8C006C16F0 /* StateMachine.swift */; };
 		491DCA1F23645F8D00E297E4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 491DCA1E23645F8D00E297E4 /* loading.json */; };
 		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
 		49AD8BD1236426D000217869 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 49AD8BD0236426D000217869 /* tessdata */; };
@@ -117,6 +118,7 @@
 		0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandritingRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		490A924C2488FA8C006C16F0 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		491DCA1E23645F8D00E297E4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = SOURCE_ROOT; };
 		49AD8BD0236426D000217869 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			children = (
 				0D582A1622C4E2EC009BFC1A /* Constant.swift */,
 				0DB72ED2236D173400838A8D /* UserStore.swift */,
+				490A924C2488FA8C006C16F0 /* StateMachine.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */,
+				490A924D2488FA8C006C16F0 /* StateMachine.swift in Sources */,
 				0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */,
 				0D582A2A22C666C5009BFC1A /* FavoriteViewController.swift in Sources */,
 				0D582A1322C3833B009BFC1A /* RubiPresenter.swift in Sources */,
