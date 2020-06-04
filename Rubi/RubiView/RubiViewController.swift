@@ -89,7 +89,7 @@ class RubiViewController: UIViewController {
             self.rootText = text
             self.rubiTextView.text = text
             self.rubiTextView.textColor = .black
-            self.presenter.requestAPI(text: text)
+            self.presenter.fire(.load(.refresh), requestText: text)
             vc.dismiss(animated: true, completion: nil)
             self.rubiTextView.resignFirstResponder()
         }
@@ -102,7 +102,7 @@ class RubiViewController: UIViewController {
             self.rootText = text
             self.rubiTextView.text = text
             self.rubiTextView.textColor = .black
-            self.presenter.requestAPI(text: text)
+            self.presenter.fire(.load(.refresh), requestText: text)
             vc.dismiss(animated: true, completion: nil)
             self.rubiTextView.resignFirstResponder()
             
@@ -115,7 +115,7 @@ class RubiViewController: UIViewController {
             self.rootText = text
             self.rubiTextView.text = text
             self.rubiTextView.textColor = .black
-            self.presenter.requestAPI(text: text)
+            self.presenter.fire(.load(.refresh), requestText: text)
             vc.dismiss(animated: true, completion: nil)
             self.rubiTextView.resignFirstResponder()
         }
@@ -189,7 +189,7 @@ extension RubiViewController: UITextViewDelegate {
             indicator.isHidden = false
             indicator.startAnimating()
             rubiLabel.isHidden = true
-            presenter.requestAPI(text: text)
+            self.presenter.fire(.load(.refresh), requestText: text)
             rubiTextView.resignFirstResponder()
             return false
         }

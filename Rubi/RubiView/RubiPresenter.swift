@@ -9,11 +9,12 @@
 import Foundation
 
 protocol RubiPresenter: class {
-    func requestAPI(text: String)
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
     func internetConnectionCheck() -> Bool
     func favoriteCheck(history: [RubiEntity])
+    @discardableResult
+    func fire(_ event: RubiEvent, requestText: String?) -> Bool
 }
 
 protocol RubiPresenterOutput: class {
@@ -22,7 +23,6 @@ protocol RubiPresenterOutput: class {
     func showUpdateHistory(entity: [RubiEntity])
     func showServerError()
 }
-
 
 class RubiPresenterImpl: RubiPresenter{
     
@@ -42,10 +42,15 @@ class RubiPresenterImpl: RubiPresenter{
         self.output = output
         
         transitions = [
+            //initialize
             Transition<RubiState, RubiEvent>(from: .`init`, to: .loading, by: .load(.refresh), withAction: refresh),
-            
+            //loading
             Transition<RubiState, RubiEvent>(from: .loading, to: .success, by: .load(.success), withAction: presentSuccess),
             Transition<RubiState, RubiEvent>(from: .loading, to: .error, by: .load(.error), withAction: presentError),
+            //success
+            Transition<RubiState, RubiEvent>(from: .success, to: .loading, by: .load(.refresh), withAction: refresh),
+            //error
+            Transition<RubiState, RubiEvent>(from: .error, to: .loading, by: .load(.refresh), withAction: refresh),
         ]
         stateMachine = StateMachine(initialState: .`init`, transitions: transitions)
     }
@@ -64,10 +69,8 @@ class RubiPresenterImpl: RubiPresenter{
             case .success(let text):
                 self.resultString = text
                 self.fire(.load(.success))
-                 self.output?.convertText(hiragana: text)
             case .failure(_):
                 self.fire(.load(.error))
-                self.output?.showServerError()
                 break
             }
         }
@@ -78,20 +81,6 @@ class RubiPresenterImpl: RubiPresenter{
     }
     private func presentError() {
         self.output?.showServerError()
-    }
-    
-    //--------------------------------------------------
-    
-    func requestAPI(text: String) {
-        model.requesetAPI(text: text) { rubi in
-            switch rubi {
-            case .success(let text):
-                 self.output?.convertText(hiragana: text)
-            case .failure(_):
-                self.output?.showServerError()
-                break
-            }
-        }
     }
     
     func saveItem(rootText: String, convertText: String) {
