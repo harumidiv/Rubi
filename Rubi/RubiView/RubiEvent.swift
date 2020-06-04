@@ -17,7 +17,7 @@ enum RubiEvent: Hashable {
     
     enum Transition {
         case voiceRecognition
-        case write
+        case handwriting
         case characterRecognition
     }
     
