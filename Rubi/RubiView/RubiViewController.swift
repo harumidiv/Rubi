@@ -115,6 +115,8 @@ class RubiViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    // MARK: - PrivateMethod
+    
     @discardableResult
     private func translation(text: String) -> Bool{
         
@@ -138,9 +140,6 @@ class RubiViewController: UIViewController {
         
         return false
     }
-    
-    
-    // MARK: - PrivateMethod
     
     private func favoriteCheck(){
         presenter.favoriteCheck(history: rubiList)
