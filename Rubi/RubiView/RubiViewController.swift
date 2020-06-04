@@ -85,42 +85,58 @@ class RubiViewController: UIViewController {
     }
     @IBAction func recordingTapped(_ sender: Any) {
         let vc = RecordingViewController()
+        
         vc.dismissHandler = { text in
-            self.rootText = text
-            self.rubiTextView.text = text
-            self.rubiTextView.textColor = .black
-            self.presenter.fire(.load(.refresh), requestText: text)
+            self.translation(text: text)
             vc.dismiss(animated: true, completion: nil)
-            self.rubiTextView.resignFirstResponder()
         }
      
         present(vc, animated: true, completion: nil)
     }
     @IBAction func pictureTapped(_ sender: Any) {
         let vc = ImageRecognitionViewController()
+        
         vc.dismissHandler = {text in
-            self.rootText = text
-            self.rubiTextView.text = text
-            self.rubiTextView.textColor = .black
-            self.presenter.fire(.load(.refresh), requestText: text)
+            self.translation(text: text)
             vc.dismiss(animated: true, completion: nil)
-            self.rubiTextView.resignFirstResponder()
-            
         }
+        
         present(vc, animated: true, completion: nil)
     }
     @IBAction func handwriteingTapped(_ sender: Any) {
         let vc = HandritingRecognitionViewController()
+        
         vc.dismissHandler = { text in
-            self.rootText = text
-            self.rubiTextView.text = text
-            self.rubiTextView.textColor = .black
-            self.presenter.fire(.load(.refresh), requestText: text)
+            self.translation(text: text)
             vc.dismiss(animated: true, completion: nil)
-            self.rubiTextView.resignFirstResponder()
         }
+        
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
+    }
+    
+    @discardableResult
+    private func translation(text: String) -> Bool{
+        
+        if !presenter.internetConnectionCheck() {
+            return true
+        }
+        guard let text = rubiTextView.text, text.count > 0 else {
+            rubiTextView.resignFirstResponder()
+            rubiLabel.text = "⚠️文字を入力してください"
+            return true
+        }
+        indicator.isHidden = false
+        indicator.startAnimating()
+        rubiLabel.isHidden = true
+        
+        self.rootText = text
+        self.rubiTextView.text = text
+        self.rubiTextView.textColor = .black
+        self.presenter.fire(.load(.refresh), requestText: text)
+        self.rubiTextView.resignFirstResponder()
+        
+        return false
     }
     
     
@@ -175,23 +191,7 @@ extension RubiViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         rubiTextView.textColor = .black
         if (text == "\n") {
-            
-            if !presenter.internetConnectionCheck() {
-                return true
-            }
-            
-            guard let text = rubiTextView.text, text.count > 0 else {
-                rubiTextView.resignFirstResponder()
-                rubiLabel.text = "⚠️文字を入力してください"
-                return true
-            }
-            rootText = text
-            indicator.isHidden = false
-            indicator.startAnimating()
-            rubiLabel.isHidden = true
-            self.presenter.fire(.load(.refresh), requestText: text)
-            rubiTextView.resignFirstResponder()
-            return false
+            return translation(text: text)
         }
         return true
     }

@@ -24,6 +24,7 @@ protocol RubiPresenterOutput: class {
     func showServerError()
 }
 
+
 class RubiPresenterImpl: RubiPresenter{
     
     var state: RubiState {
