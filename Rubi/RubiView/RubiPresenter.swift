@@ -26,8 +26,14 @@ protocol RubiPresenterOutput: class {
 
 class RubiPresenterImpl: RubiPresenter{
     
+    var state: RubiState {
+        return stateMachine.state
+    }
+    private var transitions: [Transition<RubiState, RubiEvent>]!
+    private var stateMachine: StateMachine<RubiState, RubiEvent>!
     weak var output: RubiPresenterOutput?
     let model: RubiModel
+    
  
     init(model: RubiModel, output: RubiPresenterOutput) {
         self.model = model

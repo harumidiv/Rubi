@@ -46,6 +46,8 @@
 		0DB9E02D235F572900CF6004 /* HandwritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */; };
 		0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */; };
 		490A924D2488FA8C006C16F0 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A924C2488FA8C006C16F0 /* StateMachine.swift */; };
+		490A924F2488FAFE006C16F0 /* RubiEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A924E2488FAFE006C16F0 /* RubiEvent.swift */; };
+		490A92512488FB0A006C16F0 /* RubiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A92502488FB0A006C16F0 /* RubiState.swift */; };
 		491DCA1F23645F8D00E297E4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 491DCA1E23645F8D00E297E4 /* loading.json */; };
 		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
 		49AD8BD1236426D000217869 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 49AD8BD0236426D000217869 /* tessdata */; };
@@ -119,6 +121,8 @@
 		0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandritingRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		490A924C2488FA8C006C16F0 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		490A924E2488FAFE006C16F0 /* RubiEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiEvent.swift; sourceTree = "<group>"; };
+		490A92502488FB0A006C16F0 /* RubiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RubiState.swift; sourceTree = "<group>"; };
 		491DCA1E23645F8D00E297E4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = SOURCE_ROOT; };
 		49AD8BD0236426D000217869 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				0D582A0F22C381F0009BFC1A /* RubiViewController.xib */,
 				0D582A1222C3833B009BFC1A /* RubiPresenter.swift */,
 				0D582A1422C3836F009BFC1A /* RubiModel.swift */,
+				490A924E2488FAFE006C16F0 /* RubiEvent.swift */,
+				490A92502488FB0A006C16F0 /* RubiState.swift */,
 				0DB9E02A235F570300CF6004 /* HandwriteingRecognition */,
 				0DB9E025235F55AA00CF6004 /* ImageRecognition */,
 				0D020343235CA9540044745B /* Recording */,
@@ -591,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490A924F2488FAFE006C16F0 /* RubiEvent.swift in Sources */,
 				0DB9E028235F55E800CF6004 /* ImageRecognitionViewController.swift in Sources */,
 				490A924D2488FA8C006C16F0 /* StateMachine.swift in Sources */,
 				0D582A2F22C7650F009BFC1A /* Swift+Addition.swift in Sources */,
@@ -608,6 +615,7 @@
 				0D582A1D22C505D1009BFC1A /* RubiTableViewCell.swift in Sources */,
 				0D582A1722C4E2EC009BFC1A /* Constant.swift in Sources */,
 				0DB72ED4236D247200838A8D /* RubiEntity.swift in Sources */,
+				490A92512488FB0A006C16F0 /* RubiState.swift in Sources */,
 				0D582A2622C6667D009BFC1A /* TabController.swift in Sources */,
 				0D68C31522C3810300FD6CA9 /* AppDelegate.swift in Sources */,
 				0D622EC52363F75F00BCEB08 /* ImageRecognitionPresentor.swift in Sources */,
