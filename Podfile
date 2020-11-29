@@ -7,7 +7,7 @@ target 'Rubi' do
   
   pod 'ReachabilitySwift', '4.3.1'
   pod 'lottie-ios', '3.1.6'
-  pod 'SwiftyTesseract', '2.1.0'
+  pod 'SwiftyTesseract', '3.0'
   pod 'Sketch', '3.0'
 
   # Pods for Rubi
@@ -22,16 +22,4 @@ target 'Rubi' do
     # Pods for testing
   end
 
-end
-
-post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            if 'SwiftyTesseract'.include? target.name
-                config.build_settings['SWIFT_VERSION'] = "4.2"
-            else
-                config.build_settings['SWIFT_VERSION'] = "5.0"
-            end
-        end
-    end
 end
