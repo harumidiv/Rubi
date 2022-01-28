@@ -26,4 +26,28 @@ platform :ios do
 	  export_method: "development"
 	)
   end
+  desc "deploy STG on Firebase App Distribution"
+  lane :distribution do
+    # .ipaファイルの作成
+    gym(
+      workspace: "Rubi.xcworkspace",
+      scheme: "Rubi",
+      export_method: "ad-hoc",
+      export_options: {
+        method: 'ad-hoc',
+        teamID: '24BSY9Z4H5',
+        provisioningProfiles: {
+          'harumidiv.Rubi' => 'Rubi'
+        }
+      }
+    )
+
+    # firebase app distributionに.ipaアップロード
+    firebase_app_distribution(
+      app: "Rubi",
+      testers: "harumidiv@gmail.com",
+      release_notes: "リリースノートのメッセージ",
+      firebase_cli_path: "node_modules/.bin/firebase"
+    )
+  end
 end
