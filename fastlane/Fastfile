@@ -37,7 +37,7 @@ platform :ios do
         method: 'ad-hoc',
         teamID: '24BSY9Z4H5',
         provisioningProfiles: {
-          'harumidiv.Rubi' => 'Rubi'
+          'harumidiv.Rubi' => 'Rubi-AdHoc'
         }
       }
     )
