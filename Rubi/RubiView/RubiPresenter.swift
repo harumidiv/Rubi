@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol RubiPresenter: class {
+protocol RubiPresenter: AnyObject {
     func requestAPI(text: String)
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
@@ -16,7 +16,7 @@ protocol RubiPresenter: class {
     func favoriteCheck(history: [RubiEntity])
 }
 
-protocol RubiPresenterOutput: class {
+protocol RubiPresenterOutput: AnyObject {
     func convertText(hiragana: String)
     func showInterntConnectionError()
     func showUpdateHistory(entity: [RubiEntity])
