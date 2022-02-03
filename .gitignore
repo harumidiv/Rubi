@@ -33,3 +33,6 @@ fastlane/test_output/*
 fastlane/README.md
 fasten/report.xml
 screenshots/*
+
+# node
+node_modules/
