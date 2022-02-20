@@ -44,7 +44,7 @@ platform :ios do
 
     # firebase app distributionに.ipaアップロード
     firebase_app_distribution(
-      app: "harumidiv.Rubi",
+      app: "1:226803357776:ios:c80f4582a8f320d7a79955",
       testers: "harumidiv@gmail.com",
       release_notes: "リリースノートのメッセージ",
       firebase_cli_path: "node_modules/.bin/firebase"
