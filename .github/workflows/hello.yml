@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     # 実行する内容
     steps:
-      - run: echo "Hello, World!"
+      - run: bundle exec fastlane distribution
