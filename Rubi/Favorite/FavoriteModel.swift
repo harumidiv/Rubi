@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FavoriteModel: class{
+protocol FavoriteModel: AnyObject{
     func favoriteSearch() -> [RubiEntity]
     func deleteItem(num: Int) -> [RubiEntity]
 }

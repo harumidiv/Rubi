@@ -12,7 +12,7 @@ import UIKit
 protocol ImageRecognitionPresentor {
     func recognition(image: UIImage)
 }
-protocol ImageRecognitionPresentorOutput: class {
+protocol ImageRecognitionPresentorOutput: AnyObject {
     func showRecognitionMessage(message: String)
 }
 

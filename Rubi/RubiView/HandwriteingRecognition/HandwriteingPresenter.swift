@@ -13,7 +13,7 @@ protocol HandwriteingPresenter {
     func recognition(image: UIImage)
 }
 
-protocol HandwriteingPresenterOutput: class {
+protocol HandwriteingPresenterOutput: AnyObject {
     func showRecognitionMessage(message: String)
 }
 

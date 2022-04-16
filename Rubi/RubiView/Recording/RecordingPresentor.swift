@@ -15,7 +15,7 @@ protocol RecordingPresenter {
     func checkMicrophonePermission()
 }
 
-protocol RecordingPresentorOutput: class{
+protocol RecordingPresentorOutput: AnyObject{
     func recordingText(text: String)
     func permissionState(permissin: Bool)
 }

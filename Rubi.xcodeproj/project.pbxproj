@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,8 @@
 		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
 		49AD8BD1236426D000217869 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 49AD8BD0236426D000217869 /* tessdata */; };
 		49AD8BDB23642A2A00217869 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BDA23642A2A00217869 /* Utils.swift */; };
+		49F29FBB27A2E1EF005D92C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49F29FBA27A2E1EF005D92C9 /* GoogleService-Info.plist */; };
+		49F29FBE27A2E250005D92C9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 49F29FBD27A2E250005D92C9 /* FirebaseAnalytics */; };
 		563A9D574A29B90338B5ABC9 /* Pods_Rubi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8E7DA347C022B96B0E15A4 /* Pods_Rubi.framework */; };
 		6C106C22803B9E1EC2A9D68B /* Pods_RubiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7FB142BB07C16901DA799D /* Pods_RubiTests.framework */; };
 		F6BAD6B0EA9401E58ED4A8AD /* Pods_RubiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */; };
@@ -122,6 +124,7 @@
 		49AD8BD0236426D000217869 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		49AD8BD8236429E000217869 /* RubiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubiEntity.swift; sourceTree = "<group>"; };
 		49AD8BDA23642A2A00217869 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		49F29FBA27A2E1EF005D92C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5135AADC409D88BD91F27F3A /* Pods_RubiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RubiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6173FB8953D2CF1D8ADE6044 /* Pods-Rubi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubi.debug.xcconfig"; path = "Target Support Files/Pods-Rubi/Pods-Rubi.debug.xcconfig"; sourceTree = "<group>"; };
 		7822E0F232AF4D97D5B06BC1 /* Pods-Rubi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rubi.release.xcconfig"; path = "Target Support Files/Pods-Rubi/Pods-Rubi.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F29FBE27A2E250005D92C9 /* FirebaseAnalytics in Frameworks */,
 				563A9D574A29B90338B5ABC9 /* Pods_Rubi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +255,7 @@
 				0D582A1A22C4E611009BFC1A /* RubiView */,
 				49AD8BDE23642A9D00217869 /* Resource */,
 				0D68C32022C3810600FD6CA9 /* Info.plist */,
+				49F29FBA27A2E1EF005D92C9 /* GoogleService-Info.plist */,
 			);
 			path = Rubi;
 			sourceTree = "<group>";
@@ -376,6 +381,9 @@
 			dependencies = (
 			);
 			name = Rubi;
+			packageProductDependencies = (
+				49F29FBD27A2E250005D92C9 /* FirebaseAnalytics */,
+			);
 			productName = Rubi;
 			productReference = 0D68C31122C3810300FD6CA9 /* Rubi.app */;
 			productType = "com.apple.product-type.application";
@@ -450,6 +458,9 @@
 				Base,
 			);
 			mainGroup = 0D68C30822C3810300FD6CA9;
+			packageReferences = (
+				49F29FBC27A2E250005D92C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 0D68C31222C3810300FD6CA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -466,6 +477,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F29FBB27A2E1EF005D92C9 /* GoogleService-Info.plist in Resources */,
 				0D582A1122C381F0009BFC1A /* RubiViewController.xib in Resources */,
 				0D582A1E22C505D1009BFC1A /* RubiTableViewCell.xib in Resources */,
 				491DCA1F23645F8D00E297E4 /* loading.json in Resources */,
@@ -792,14 +804,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = Rubi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.Rubi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -813,14 +825,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = Rubi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.3;
+				MARKETING_VERSION = 2.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.Rubi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -954,6 +966,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49F29FBC27A2E250005D92C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49F29FBD27A2E250005D92C9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49F29FBC27A2E250005D92C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0D68C30922C3810300FD6CA9 /* Project object */;
 }

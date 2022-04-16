@@ -15,7 +15,7 @@ protocol RecordingModel {
     func checkMicrophonePermission(result: @escaping (Bool)->())
 }
 
-protocol RecordingModelOutput: class {
+protocol RecordingModelOutput: AnyObject {
     func recordingText(text: String)
 }
 

@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol FavoritePresenter: class{
+protocol FavoritePresenter: AnyObject{
     func favoriteSearch()
     func deleteItem(num: Int)
 }
-protocol FavoritePresenterOutput: class{
+protocol FavoritePresenterOutput: AnyObject{
     func showRubiEntityModel(entity: [RubiEntity])
     func showUpdateFavoriteList(entity: [RubiEntity])
 }

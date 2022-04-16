@@ -1,0 +1,53 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :make_debug_ipa do
+	gym(
+	  configuration: "Debug",
+	  clean: true,
+	  output_directory: "./build",
+	  output_name: "rubi.ipa",
+	  export_method: "development"
+	)
+  end
+  desc "deploy STG on Firebase App Distribution"
+  lane :distribution do
+    # .ipaファイルの作成
+    gym(
+      workspace: "Rubi.xcworkspace",
+      scheme: "Rubi",
+      export_method: "ad-hoc",
+      export_options: {
+        method: 'ad-hoc',
+        teamID: '24BSY9Z4H5',
+        provisioningProfiles: {
+          'harumidiv.Rubi' => 'Rubi-AdHoc'
+        }
+      }
+    )
+
+    # firebase app distributionに.ipaアップロード
+    firebase_app_distribution(
+      app: "1:226803357776:ios:c80f4582a8f320d7a79955",
+      testers: "harumidiv@gmail.com",
+      release_notes: "リリースノートのメッセージ",
+      firebase_cli_path: "node_modules/.bin/firebase"
+    )
+  end
+end

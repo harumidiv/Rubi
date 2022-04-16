@@ -1,0 +1,22 @@
+{
+  "name": "rubi",
+  "description": "[![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://swift.org)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harumidiv/Rubi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harumidiv/Rubi/issues"
+  },
+  "homepage": "https://github.com/harumidiv/Rubi#readme",
+  "dependencies": {
+    "firebase-tools": "^10.1.4"
+  }
+}
