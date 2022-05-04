@@ -15,4 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     # 実行する内容
     steps:
-      - run: bundle exec fastlane distribution
+      - run: brew install fastlane
+      - run: bundle exec fastlane hello_fastlane

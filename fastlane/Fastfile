@@ -50,4 +50,8 @@ platform :ios do
       firebase_cli_path: "node_modules/.bin/firebase"
     )
   end
+  # hello print lane
+  lane :hello_fastlane do
+    puts("hello!!!!!!")
+  end
 end
