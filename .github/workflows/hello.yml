@@ -1,5 +1,5 @@
 # ワークフローの名前、Actions上に表示される
-name: Hello, World!
+name: Hello Fastlane🐱
 # 何をアクションとするか
 # この場合該当リポジトリにどのブランチでpushしても以下のjobが必ず実行される
 on: push
@@ -12,11 +12,11 @@ jobs:
     runs-on: macos-latest
 
     # jobの名前
-    name: Greeting
+    name: Run Fastlane Sample
     # 実行する内容
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: sudo xcode-select -s '/Applications/Xcode_13.2.app/Contents/Developer'
       - run: xcodebuild -version
-      - run: brew install fastlane
-      - run: fastlane hello_fastlane
+      - run: bundle install
+      - run: bundle exec fastlane hello_fastlane
