@@ -1,0 +1,13 @@
+# ワークフローの名前、Actions上に表示される
+name: ipaをAppStoreとFirebase Distributionにあげる
+on: push
+
+jobs:
+  main:
+    runs-on: macOS-latest
+    env:
+      KEYCHAIN: '/Library/Keychains/System.keychain'
+      ASC_KEY_ID: AAAAAAAAAA
+      ASC_ISSUER_ID: 00000000-0000-0000-0000-000000000000
+    steps:
+    	- run: echo "ここまでは動いてるよ"
