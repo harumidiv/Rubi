@@ -11,4 +11,4 @@ jobs:
       ASC_ISSUER_ID: 00000000-0000-0000-0000-000000000000
 
     steps:
-    	- run: echo "${{ secrets.P8_APPSTORECONNECT_API }}"
+      - run: echo "${{ secrets.P8_APPSTORECONNECT_API }}"
