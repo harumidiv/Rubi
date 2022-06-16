@@ -9,5 +9,6 @@ jobs:
       KEYCHAIN: '/Library/Keychains/System.keychain'
       ASC_KEY_ID: AAAAAAAAAA
       ASC_ISSUER_ID: 00000000-0000-0000-0000-000000000000
+
     steps:
-    	- run: echo "ここまでは動いてるよ"
+      - run: echo "ここまでは動いてるよ"
