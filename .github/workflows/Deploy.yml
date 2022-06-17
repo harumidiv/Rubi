@@ -35,3 +35,9 @@ jobs:
 
       - name: Install | cocoapods
         run: pod install --repo-update
+     # keychain
+      - name: Keychain | p12
+        run: |
+          echo "${{ secrets.P12_BASE64 }}" > ios_distribution.p12.txt
+          base64 --decode ios_distribution.p12.txt > ios_distribution.p12
+          sudo security import ios_distribution.p12 -k $KEYCHAIN -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
