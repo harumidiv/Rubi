@@ -25,6 +25,7 @@ jobs:
           issuer id: ${{ env.ASC_ISSUER_ID }}
           key: ${{ secrets.P8_APPSTORECONNECT_API }}
       - run: echo "success!!"
+
       # cocoaPod
       - name: Cache | cocoapods
         uses: actions/cache@v1
@@ -35,9 +36,23 @@ jobs:
 
       - name: Install | cocoapods
         run: pod install --repo-update
-     # keychain
+
+      # keychain
       - name: Keychain | p12
         run: |
           echo "${{ secrets.P12_BASE64 }}" > ios_distribution.p12.txt
           base64 --decode ios_distribution.p12.txt > ios_distribution.p12
           sudo security import ios_distribution.p12 -k $KEYCHAIN -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
+      
+      # build
+      - name: Build | provisioning profile
+        run: |
+          JSON=`curl -sSg -H "Authorization:Bearer ${{ steps.asc.outputs.token }}" https://api.appstoreconnect.apple.com/v1/profiles?filter[name]=<name>`
+          LEN=`echo $JSON | jq .data | jq length`
+
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          for i in `seq 0 $(($LEN - 1))`; do
+            uuid=`echo $JSON | jq -r .data[$i].attributes.uuid`
+            echo $JSON | jq -r .data[$i].attributes.profileContent > $uuid.txt
+            base64 --decode $uuid.txt > ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+          done
