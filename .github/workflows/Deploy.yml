@@ -47,7 +47,7 @@ jobs:
       # build
       - name: Build | provisioning profile
         run: |
-          JSON=`curl -sSg -H "Authorization:Bearer ${{ steps.asc.outputs.token }}" https://api.appstoreconnect.apple.com/v1/profiles?filter[Rubi]=<Rubi>`
+          JSON=`curl -sSg -H "Authorization:Bearer ${{ steps.asc.outputs.token }}" https://api.appstoreconnect.apple.com/v1/profiles/harumidiv.Rubi`
           LEN=`echo $JSON | jq .data | jq length`
 
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
@@ -58,7 +58,7 @@ jobs:
           done
 
       - name: Build | xcodebuild archive
-        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme <scheme> -configuration Release archive -archivePath ./archive | xcpretty
+        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
 
       - name: Build | xcodebuild export
         run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptions.plist | xcpretty
