@@ -65,4 +65,4 @@ jobs:
       - name: Upload | altool
         run: |
           mkdir ~/private_keys; echo "${{ secrets.P8_APPSTORECONNECT_API }}" > ~/private_keys/AuthKey_$ASC_KEY_ID.p8
-          xcrun altool --upload-app -f ./stubBuild/<project>.ipa -t ios --apiKey $ASC_KEY_ID --apiIssuer $ASC_ISSUER_ID
+          xcrun altool --upload-app -f ./stubBuild/Rubi.ipa -t ios --apiKey $ASC_KEY_ID --apiIssuer $ASC_ISSUER_ID
