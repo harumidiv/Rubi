@@ -59,7 +59,7 @@ jobs:
 
       - name: Build | xcodebuild archive
         run: |
-          UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ~/Library/MobileDevice/Provisioning\ Profiles/hoge.mobileprovision)`
+          UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ~/Library/MobileDevice/Provisioning\ Profiles/6af8ad8c-af9c-4718-81a9-c5b17eac6137.mobileprovision)`
           xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release clean archive -archivePath ./archive -sdk 'iphoneos' -destination 'generic/platform=iOS' DEVELOPMENT_TEAM=Harumi\ Sagawa CODE_SIGN_IDENTITY='Apple Distribution: Harumi\ Sagawa. (24BSY9Z4H5)' PROVISIONING_PROFILE=$UUID
       - name: Build | xcodebuild export
         run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptions.plist | xcpretty
