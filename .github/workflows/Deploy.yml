@@ -56,9 +56,14 @@ jobs:
             echo $JSON | jq -r .data[$i].attributes.profileContent > $uuid.txt
             base64 --decode $uuid.txt > ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
           done
+          
+      # profileの確認
       - name: Build | ProfileCheck
         run: echo ~/Library/MobileDevice/Provisioning\ Profiles/*
-
+    
+      - name: Build | Delete Package Resolve
+        run: xcodebuild -resolvePackageDependencies -project Rubi.xcodeproj -scheme Rubi -clonedSourcePackagesDirPath ./SourcePackages
+      
       - name: Build | xcodebuild archive
         run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
 #      - name: Build | xcodebuild archive
