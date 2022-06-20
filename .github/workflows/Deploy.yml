@@ -61,11 +61,11 @@ jobs:
       - name: Build | ProfileCheck
         run: echo ~/Library/MobileDevice/Provisioning\ Profiles/*
     
-      - name: Build | Delete Package Resolve
-        run: xcodebuild -resolvePackageDependencies -project Rubi.xcodeproj -scheme Rubi -clonedSourcePackagesDirPath ./SourcePackages
+#      - name: Build | Delete Package Resolve
+#        run: xcodebuild -resolvePackageDependencies -project Rubi.xcodeproj -scheme Rubi -clonedSourcePackagesDirPath ./SourcePackages
       
       - name: Build | xcodebuild archive
-        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
+        run: set -o pipefail && xcodebuild -resolvePackageDependencies -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
 #      - name: Build | xcodebuild archive
 #        run: |
 #          UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ~/Library/MobileDevice/Provisioning\ Profiles/6af8ad8c-af9c-4718-81a9-c5b17eac6137.mobileprovision)`
