@@ -65,11 +65,10 @@ jobs:
         run: xcodebuild -resolvePackageDependencies -project Rubi.xcodeproj -scheme Rubi -clonedSourcePackagesDirPath ./SourcePackages archive -archivePath ./archive | xcpretty
 
       - name: Build | Repository Check
-        run: echo ./*
-
-
-#      - name: Build | xcodebuild export
-#        run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptions.plist | xcpretty
+        run: echo /*
+      - name: Build | xcodebuild export
+        run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptions.plist | xcpretty
+        
 #      - name: Upload | altool
 #        run: |
 #          mkdir ~/private_keys; echo "${{ secrets.P8_APPSTORECONNECT_API }}" > ~/private_keys/AuthKey_$ASC_KEY_ID.p8
