@@ -67,7 +67,7 @@ jobs:
       - name: Build | Repository Check
         run: echo /*
       - name: Build | xcodebuild export
-        run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptions.plist | xcpretty
+        run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptionPlist.plist | xcpretty
         
 #      - name: Upload | altool
 #        run: |
