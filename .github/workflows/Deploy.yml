@@ -44,7 +44,7 @@ jobs:
           base64 --decode ios_distribution.p12.txt > ios_distribution.p12
           sudo security import ios_distribution.p12 -k $KEYCHAIN -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
       
-      # build memo: 6af8ad8c-af9c-4718-81a9-c5b17eac6137
+      # build
       - name: Build | provisioning profile
         run: |
           JSON=`curl -sSg -H "Authorization:Bearer ${{ steps.asc.outputs.token }}" https://api.appstoreconnect.apple.com/v1/profiles?filter[name]=Rubi`
