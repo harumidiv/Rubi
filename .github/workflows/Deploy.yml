@@ -63,9 +63,12 @@ jobs:
 
       - name: Build | Delete Package resolved
         run: rm -rf ./Rubi.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+
+      - name: Build | Cacher Package Dependencies
+        run: xcodebuild -resolvePackageDependencies -project Rubi.xcodeproj -scheme Rubi -clonedSourcePackagesDirPath ./SourcePackages
     
       - name: Build | xcodebuild archive
-        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive  | xcpretty
+        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release -clonedSourcePackagesDirPath ./SourcePackages archive -archivePath ./archive  | xcpretty
         #run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
 
       - name: Build | xcodebuild export
