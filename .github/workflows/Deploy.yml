@@ -62,7 +62,7 @@ jobs:
         run: echo ~/Library/MobileDevice/Provisioning\ Profiles/*
     
       - name: Build | xcodebuild archive
-        run: set -o pipefail && xcodebuild -resolvePackageDependencies -clonedSourcePackagesDirPath ./SourcePackages -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive  | xcpretty
+        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive  | xcpretty
         #run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
 
       - name: Build | xcodebuild export
