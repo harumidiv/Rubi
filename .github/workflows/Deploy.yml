@@ -60,6 +60,9 @@ jobs:
       # profileの確認
       - name: Build | ProfileCheck
         run: echo ~/Library/MobileDevice/Provisioning\ Profiles/*
+
+      - name: Build : Delete Package.resolved
+        run: rm -rf Rubi.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
     
       - name: Build | xcodebuild archive
         run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive  | xcpretty
