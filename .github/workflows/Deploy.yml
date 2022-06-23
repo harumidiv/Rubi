@@ -4,7 +4,7 @@ on: push
 
 jobs:
   main:
-    runs-on: macOS-latest
+    runs-on: macos-12
     env:
       KEYCHAIN: '/Library/Keychains/System.keychain'
       ASC_KEY_ID: C538N5NKPK
@@ -61,15 +61,8 @@ jobs:
       - name: Build | ProfileCheck
         run: echo ~/Library/MobileDevice/Provisioning\ Profiles/*
 
-      - name: Build | Delete Package resolved
-        run: rm -rf ./Rubi.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
-
-      - name: Build | Cacher Package Dependencies
-        run: xcodebuild -resolvePackageDependencies -project Rubi.xcodeproj -scheme Rubi -clonedSourcePackagesDirPath ./SourcePackages
-    
       - name: Build | xcodebuild archive
-        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release -clonedSourcePackagesDirPath ./SourcePackages archive -archivePath ./archive  | xcpretty
-        #run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
+        run: set -o pipefail && xcodebuild -workspace Rubi.xcworkspace -scheme Rubi -configuration Release archive -archivePath ./archive | xcpretty
 
       - name: Build | xcodebuild export
         run: set -o pipefail && xcodebuild -exportArchive -archivePath ./archive.xcarchive -exportPath ./build -exportOptionsPlist ./Rubi/exportOptionPlist.plist | xcpretty
