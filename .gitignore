@@ -1,4 +1,6 @@
 # Xcode (from gitignore.io)
+SourcePackages/
+*.xcarchive/
 build/
 *.pbxuser
 !default.pbxuser
