@@ -45,6 +45,7 @@
 		0DB9E029235F55E800CF6004 /* ImageRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E027235F55E800CF6004 /* ImageRecognitionViewController.xib */; };
 		0DB9E02D235F572900CF6004 /* HandwritingRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */; };
 		0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */; };
+		491A39322862165100ECE805 /* exportOptionPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 491A39312862165100ECE805 /* exportOptionPlist.plist */; };
 		491DCA1F23645F8D00E297E4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 491DCA1E23645F8D00E297E4 /* loading.json */; };
 		49AD8BCF236425C500217869 /* ImageRecognitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */; };
 		49AD8BD1236426D000217869 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 49AD8BD0236426D000217869 /* tessdata */; };
@@ -119,6 +120,7 @@
 		0DB9E02B235F572900CF6004 /* HandwritingRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingRecognitionViewController.swift; sourceTree = "<group>"; };
 		0DB9E02C235F572900CF6004 /* HandritingRecognitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandritingRecognitionViewController.xib; sourceTree = "<group>"; };
 		38451C233303D432530ED683 /* Pods-RubiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RubiUITests.release.xcconfig"; path = "Target Support Files/Pods-RubiUITests/Pods-RubiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		491A39312862165100ECE805 /* exportOptionPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exportOptionPlist.plist; sourceTree = "<group>"; };
 		491DCA1E23645F8D00E297E4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		49AD8BCE236425C500217869 /* ImageRecognitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRecognitionModel.swift; path = Rubi/RubiView/HandwriteingRecognition/ImageRecognitionModel.swift; sourceTree = SOURCE_ROOT; };
 		49AD8BD0236426D000217869 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		0D68C31322C3810300FD6CA9 /* Rubi */ = {
 			isa = PBXGroup;
 			children = (
+				491A39312862165100ECE805 /* exportOptionPlist.plist */,
 				49AD8BD0236426D000217869 /* tessdata */,
 				49AD8BDC23642A4300217869 /* Domain */,
 				0D68C31422C3810300FD6CA9 /* AppDelegate.swift */,
@@ -487,6 +490,7 @@
 				0DB9E02E235F572900CF6004 /* HandritingRecognitionViewController.xib in Resources */,
 				0D582A2B22C666C5009BFC1A /* FavoriteViewController.xib in Resources */,
 				0D68C31F22C3810600FD6CA9 /* LaunchScreen.storyboard in Resources */,
+				491A39322862165100ECE805 /* exportOptionPlist.plist in Resources */,
 				0D68C31C22C3810600FD6CA9 /* Assets.xcassets in Resources */,
 				0D020347235CA96C0044745B /* RecordingViewController.xib in Resources */,
 				0D68C31A22C3810300FD6CA9 /* Main.storyboard in Resources */,
@@ -803,17 +807,19 @@
 			baseConfigurationReference = 6173FB8953D2CF1D8ADE6044 /* Pods-Rubi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = Rubi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.Rubi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Rubi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -824,17 +830,19 @@
 			baseConfigurationReference = 7822E0F232AF4D97D5B06BC1 /* Pods-Rubi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 24BSY9Z4H5;
 				INFOPLIST_FILE = Rubi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.4;
+				MARKETING_VERSION = 2.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = harumidiv.Rubi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Rubi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -972,8 +980,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = exactVersion;
+				version = 9.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
