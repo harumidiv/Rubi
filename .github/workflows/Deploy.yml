@@ -1,10 +1,15 @@
-# ワークフローの名前、Actions上に表示される
-name: ipaをAppStoreとFirebase Distributionにあげる
-on: push
+name: ipaをAppStoreにDeployするためのAcdtion
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - release
 
 jobs:
   main:
     runs-on: macos-12
+    # プルリクエストがマージされた場合、およびプルリクエスト元のブランチがmainであること
+    if: github.event.pull_request.merged == true && contains(github.head_ref, 'master')
     env:
       KEYCHAIN: '/Library/Keychains/System.keychain'
       ASC_KEY_ID: C538N5NKPK
