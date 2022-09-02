@@ -34,13 +34,13 @@ class RubiPresenterImpl: RubiPresenter{
         self.output = output
     }
     func requestAPI(text: String) {
-        model.requesetAPI(text: text) { rubi in
-            switch rubi {
-            case .success(let text):
-                 self.output?.convertText(hiragana: text)
-            case .failure(_):
+        Task.detached {@MainActor in
+            do {
+                let result = try await self.model.requestAPI(text:text)
+                self.output?.convertText(hiragana: result)
+            }
+            catch {
                 self.output?.showServerError()
-                break
             }
         }
     }

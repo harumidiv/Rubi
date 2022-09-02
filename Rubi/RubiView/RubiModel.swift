@@ -9,12 +9,17 @@
 import Foundation
 
 
-protocol RubiModel: class{
-    func requesetAPI(text: String, result:@escaping(Result<String, Error>)->())
+protocol RubiModel: AnyObject {
+    func requestAPI(text: String) async throws -> String
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
     func internetConnectionCheck() -> Bool
     func favoriteCheck(history: [RubiEntity]) -> [RubiEntity]
+}
+
+enum RubiError: Error {
+    case unknown
+    case serverError
 }
 
 class RubiModelImpl: RubiModel {
@@ -24,6 +29,29 @@ class RubiModelImpl: RubiModel {
         request.addValue(Constant.request.json, forHTTPHeaderField: Constant.request.type)
         return request
     }()
+    
+    func requestAPI(text: String) async throws -> String {
+        let successRange = 200..<300
+        let outputType = UserStore.isHiragana ?  Constant.convertType.hiragana : Constant.convertType.katakana
+        let postData: PostData = PostData(app_id: Constant.appID,
+                                          sentence: text,
+                                          output_type: outputType)
+        
+        guard let uploadData = try? JSONEncoder().encode(postData) else {
+            throw RubiError.unknown
+        }
+        request.httpBody = uploadData
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let code = (response as? HTTPURLResponse)?.statusCode,
+              successRange.contains(code),
+              let jsonData = try? JSONDecoder().decode(Rubi.self, from: data) else {
+            throw RubiError.serverError
+        }
+
+        return jsonData.converted
+    }
     
     func requesetAPI(text: String, result:@escaping(Result<String, Error>)->()) {
         let postData: PostData!
@@ -116,6 +144,7 @@ class RubiModelImpl: RubiModel {
         }
         return false
     }
+
     func favoriteCheck(history: [RubiEntity]) -> [RubiEntity] {
         var rubiList = history
         if UserStore.favoriteItemIsNil() {
