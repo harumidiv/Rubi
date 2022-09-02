@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol RubiModel: class{
+protocol RubiModel: AnyObject {
     func requesetAPI(text: String, result:@escaping(Result<String, Error>)->())
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
