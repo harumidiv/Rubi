@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol RubiModel: AnyObject {
-    func requesetAPI(text: String, result:@escaping(Result<String, Error>)->())
+    func requestAPI(text: String) async throws -> String
     func saveItem(rootText:String, convertText: String)
     func removeItem(rootText:String, convertText: String)
     func internetConnectionCheck() -> Bool
