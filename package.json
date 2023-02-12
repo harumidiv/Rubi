@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/harumidiv/Rubi#readme",
   "dependencies": {
-    "firebase-tools": "^10.1.4"
+    "firebase-tools": "^11.22.0"
   }
 }
